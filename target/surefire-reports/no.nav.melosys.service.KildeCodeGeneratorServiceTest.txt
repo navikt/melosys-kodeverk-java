@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: no.nav.melosys.service.KildeCodeGeneratorServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.727 s <<< FAILURE! - in no.nav.melosys.service.KildeCodeGeneratorServiceTest
+velgTemplateType_classNavnFinnesList_velgRiktigTemplate(no.nav.melosys.service.KildeCodeGeneratorServiceTest)  Time elapsed: 0.415 s  <<< ERROR!
+java.lang.RuntimeException: 
+Lagring av Java fil feilet for classNavn Forordning_883_2004Template not found for name "LovvalgBestemmelse.ftlh".
+The name was interpreted by this TemplateLoader: FileTemplateLoader(baseDir="C:\Ankur\melosyskodeverk\target\classes\templates", canonicalBasePath="C:\Ankur\melosyskodeverk\target\classes\templates\").
+	at no.nav.melosys.service.KildeCodeGeneratorServiceTest.velgTemplateType_classNavnFinnesList_velgRiktigTemplate(KildeCodeGeneratorServiceTest.java:58)
+
