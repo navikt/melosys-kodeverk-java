@@ -45,8 +45,8 @@ public class KodeverkService {
     }
 
     public void yamlTilJavaKildeFiler() throws IOException {
-        kopiStandardJavaFiler();
         fileService.lagJavaPackageMapper(enumKildeKodeMappe);
+        kopiStandardJavaFiler();
         HashMap<String, Object> melosysInternKodeverk = yamlTilMelosysInternKodeverkObject();
         traverserHashMap("", melosysInternKodeverk, new HashSet<>());
     }
