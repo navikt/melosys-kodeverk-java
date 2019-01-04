@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @EnableAutoConfiguration(exclude = {WebMvcAutoConfiguration.class})
-@ContextConfiguration(classes = {KodeverkService.class, FileService.class, KildeCodeGeneratorService.class})
+@ContextConfiguration(classes = {KodeverkService.class, FileService.class, KildeCodeGeneratorService.class, FreeMarkerTemplateService.class})
 @PropertySource("classpath:application.properties")
 
 public class KodeverkServiceIT extends AssertionValidator {

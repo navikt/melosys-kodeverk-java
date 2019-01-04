@@ -1,20 +1,14 @@
 package no.nav.melosys.service;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import freemarker.template.Configuration;
-import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -26,23 +20,19 @@ public class KildeCodeGeneratorService {
 
     private final static String KODEVERK_TEMPLATE = "Kodeverk.ftlh";
 
-    private final Configuration cfg;
+    private final FreeMarkerTemplateService freeMarkerTemplateService;
 
     private List<String> interntKodeverkTabellEnumFiler;
 
     private List<String> lovvalgBestemmelseEnumFiler;
 
     @Autowired
-    public KildeCodeGeneratorService(@Value("${template.mappe}") String templateMappe,
-                                     @Value("#{'${interntkodeverktabell.enum.filer}'.split(',')}") List<String> interntkodeverktabellEnumFiler,
-                                     @Value("#{'${lovvalgBestemmelse.enum.filer}'.split(',')}") List<String> lovvalgBestemmelseEnumFiler) {
+    public KildeCodeGeneratorService(@Value("#{'${interntkodeverktabell.enum.filer}'.split(',')}") List<String> interntkodeverktabellEnumFiler,
+                                     @Value("#{'${lovvalgBestemmelse.enum.filer}'.split(',')}") List<String> lovvalgBestemmelseEnumFiler,
+                                     FreeMarkerTemplateService freeMarkerTemplateService) {
         this.interntKodeverkTabellEnumFiler = interntkodeverktabellEnumFiler;
         this.lovvalgBestemmelseEnumFiler = lovvalgBestemmelseEnumFiler;
-
-        cfg = new Configuration(Configuration.VERSION_2_3_27);
-        //cfg.setDirectoryForTemplateLoading(new ClassPathResource(templateMappe).getFile());
-        cfg.setClassForTemplateLoading(this.getClass(), templateMappe);
-
+        this.freeMarkerTemplateService = freeMarkerTemplateService;
     }
 
     public String genererEnumKildeKode(String classNavn, Map<String, Object> enumMap) {
@@ -55,13 +45,9 @@ public class KildeCodeGeneratorService {
             .concat(";");
 
         root.put("enumVerdi", enumList);
-        try {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
-            Template temp = cfg.getTemplate(velgTemplate(classNavn));
-            Writer out = new OutputStreamWriter(byteArrayOutputStream);
-            temp.process(root, out);
-            return new String(byteArrayOutputStream.toByteArray());
+        try {
+            return freeMarkerTemplateService.generereKildeKodeFraTemplate(root, velgTemplate(classNavn));
         } catch (IOException | TemplateException e) {
             throw new RuntimeException("Lagring av Java fil feilet for classNavn " + classNavn + " " + e.getMessage());
         }
