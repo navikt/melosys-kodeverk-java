@@ -1,5 +1,5 @@
 <#ftl output_format="undefined" auto_esc=false>
-package no.nav.melosys.domain.bestemmelse;
+package no.nav.melosys.domain.kodeverk;
 
 public enum ${classNavn} implements LovvalgBestemmelse {
 

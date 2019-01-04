@@ -1,5 +1,5 @@
 <#ftl output_format="undefined" auto_esc=false>
-package no.nav.melosys.no.domain;
+package no.nav.melosys.no.domain.kodeverk;
 
 import javax.persistence.Converter;
 
