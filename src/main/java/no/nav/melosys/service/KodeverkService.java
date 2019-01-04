@@ -39,9 +39,8 @@ public class KodeverkService {
     }
 
     public HashMap<String, Object> yamlTilMelosysInternKodeverkObject() throws IOException {
-        File file = fileService.lesFil(internKodeverkYaml);
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return mapper.readValue(file, HashMap.class);
+        return mapper.readValue(new String(fileService.lesFilTilByteArray(internKodeverkYaml)), HashMap.class);
     }
 
     public void yamlTilJavaKildeFiler() throws IOException {
