@@ -40,11 +40,9 @@ public class KildeCodeGeneratorService {
         this.lovvalgBestemmelseEnumFiler = lovvalgBestemmelseEnumFiler;
 
         cfg = new Configuration(Configuration.VERSION_2_3_27);
-        try {
-            cfg.setDirectoryForTemplateLoading(new ClassPathResource(templateMappe).getFile());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //cfg.setDirectoryForTemplateLoading(new ClassPathResource(templateMappe).getFile());
+        cfg.setClassForTemplateLoading(this.getClass(), templateMappe);
+
     }
 
     public String genererEnumKildeKode(String classNavn, Map<String, Object> enumMap) {
