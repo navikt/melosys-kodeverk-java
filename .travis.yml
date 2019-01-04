@@ -5,8 +5,8 @@ script:
   - mvn clean install -B -V
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-1.0-SNAPSHOT.jar
   - dir no\\nav\\melosys\\domain\\kodeverk
-  - jar cvf melosys-intern-kodeverk-1.0.0-snapshot.jar no
-  - jar tf melosys-intern-kodeverk-1.0.0-snapshot.jar
+  - jar -cvf melosys-intern-kodeverk-1.0.0-snapshot.jar no
+  - jar -tf melosys-intern-kodeverk-1.0.0-snapshot.jar
 #before_cache:
 #  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 #  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
