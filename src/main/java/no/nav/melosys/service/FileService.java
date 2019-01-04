@@ -20,6 +20,16 @@ public class FileService {
         }
     }
 
+    public byte[] lesFilTilByteArray(String path) {
+        try {
+            ClassPathResource classPathResource = new ClassPathResource(path);
+            return FileCopyUtils.copyToByteArray(classPathResource.getInputStream());
+
+        } catch (IOException e) {
+            throw new RuntimeException("Fil lesing feilet :" + e.getMessage());
+        }
+    }
+
     public File lagJavaKildeFil(String mappe, String navn) {
         try {
             if (StringUtils.isEmpty(navn)) {
@@ -35,7 +45,7 @@ public class FileService {
 
     public void kopiFilTilMappe(File filIn, File filUt) {
         try {
-            FileCopyUtils.copy(lesFil(filIn.toString()), filUt);
+            FileCopyUtils.copy(lesFilTilByteArray(filIn.toString()), filUt);
         } catch (IOException e) {
             throw new RuntimeException("Lagring av java fil feilet : " + e.getMessage());
         }
