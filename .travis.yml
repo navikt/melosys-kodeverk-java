@@ -2,6 +2,7 @@ language: java
 jdk:
   - openjdk8
 script:
+  - mkdir melosys-kodeverk
   - mvn clean install -B -V
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
   - cd melosys-kodeverk
