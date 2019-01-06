@@ -13,7 +13,7 @@ public enum ${classNavn} implements LovvalgBestemmelse {
 
     @Override
     public String getKode() {
-        return name;
+        return name();
     }
 
     @Override
