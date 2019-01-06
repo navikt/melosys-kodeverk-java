@@ -1,4 +1,4 @@
-<#ftl output_format="undefined" auto_esc=false>
+<#ftl output_format="undefined" encoding="utf-8" auto_esc=false>
 package no.nav.melosys.domain.kodeverk;
 
 public enum ${classNavn} implements Kodeverk {

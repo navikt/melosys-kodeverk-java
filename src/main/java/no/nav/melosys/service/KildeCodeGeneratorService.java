@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import static java.util.stream.Collectors.*;
 
 @Component
 public class KildeCodeGeneratorService {
@@ -39,18 +42,29 @@ public class KildeCodeGeneratorService {
         Map root = new HashMap();
         root.put("classNavn", classNavn);
 
+        String template = velgTemplate(classNavn);
+
+        if(template.equals(LOVVALGBESTEMMELSE_TEMPLATE)) {
+
+        }
         String enumList = enumMap.entrySet().stream()
-            .map((kode) -> kode.getKey() + "(\"" + kode.getKey() + "\", \"" + kode.getValue() + "\")")
-            .collect(Collectors.joining(",\n\t"))
+            .map((kode) -> processor(template, kode).get())
+            .collect(joining(",\n\t"))
             .concat(";");
 
         root.put("enumVerdi", enumList);
 
         try {
-            return freeMarkerTemplateService.generereKildeKodeFraTemplate(root, velgTemplate(classNavn));
+            return freeMarkerTemplateService.generereKildeKodeFraTemplate(root, template);
         } catch (IOException | TemplateException e) {
             throw new RuntimeException("Lagring av Java fil feilet for classNavn " + classNavn + " " + e.getMessage());
         }
+    }
+
+    static Supplier<String> processor(String template, Map.Entry kode) {
+        return template.equals(LOVVALGBESTEMMELSE_TEMPLATE) ?
+            () -> kode.getKey() + "( \"" + kode.getValue() + "\")" :
+            () -> kode.getKey() + "(\"" + kode.getKey() + "\", \"" + kode.getValue() + "\")";
     }
 
     public String velgTemplate(String classNavn) {

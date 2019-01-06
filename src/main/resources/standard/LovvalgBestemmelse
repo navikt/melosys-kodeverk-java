@@ -1,6 +1,6 @@
-package no.nav.melosys.domain;
+package no.nav.melosys.domain.kodeverk;
 
-public interface LovvalgBestemmelse extends no.nav.melosys.domain.Kodeverk {
+public interface LovvalgBestemmelse extends Kodeverk {
 
     String name();
 

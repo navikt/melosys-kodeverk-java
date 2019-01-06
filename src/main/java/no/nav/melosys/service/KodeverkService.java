@@ -51,7 +51,8 @@ public class KodeverkService {
     }
 
     public void kopiStandardJavaFiler() {
-        standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File("standard", s), new File(enumKildeKodeMappe, s)));
+        fileService.kopiFilTilMappe(new File("standard", "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
+        standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File("standard", s), new File(enumKildeKodeMappe, s + ".java")));
     }
 
     private void traverserHashMap(String classNavn, HashMap<String, Object> map, Set<String> seenKey) {

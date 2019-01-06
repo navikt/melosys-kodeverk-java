@@ -1,4 +1,4 @@
-package no.nav.melosys.domain;
+package no.nav.melosys.domain.kodeverk;
 
 import javax.persistence.AttributeConverter;
 
