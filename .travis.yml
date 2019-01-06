@@ -3,7 +3,7 @@ jdk:
   - openjdk8
 script:
   - mvn clean install -B -V
-  - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-1.0-SNAPSHOT.jar
+  - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
   - cd melosys-kodeverk
   - mvn clean install -B -V
   - mvn deploy
