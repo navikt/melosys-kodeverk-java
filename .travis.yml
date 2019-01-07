@@ -1,13 +1,20 @@
 language: java
 jdk:
   - openjdk8
+
+#deploy:
+#  provider: script
+#  script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy"
+#  skip_cleanup: true
+#  on:
+#    tags: true
+
 script:
   - mkdir melosys-kodeverk
   - mvn clean install -B -V
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
   - cd melosys-kodeverk
   - mvn clean install -B -V
-  - mvn deploy
 #before_cache:
 #  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 #  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
