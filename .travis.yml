@@ -1,10 +1,24 @@
 language: java
 jdk:
-  - openjdk8
-
+- openjdk8
 script:
-  - mkdir melosys-kodeverk
-  - mvn clean install -B -V
-  - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
-  - cd melosys-kodeverk
-  - mvn clean install -B -V
+- mkdir melosys-kodeverk
+- mvn clean install -B -V
+- java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
+- cd melosys-kodeverk
+- mvn clean install -B -V
+  - |
+    set -e
+    if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
+        gpg --fast-import travis/codesigning.asc
+        mvn -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
+    fi
+env:
+  global:
+  - OSSRH_JIRA_USERNAME=navikt
+  - secure: SNjQXNFd5JZ1/tEwHjBgccW4IaJ3u/GH0naCfMsQKPYn9ZAhHIil17o8GKdRVPZ0rypYJ79ra5TJPwlhzFgIxIW6MsNoBvC6WSG68hCkbwKpBDUoAuhUwpSXRij1EjI4mAyhg+vicoESntd/rXkt+42OSg0stMTzHlfKT9+leYux+VkvInTbt416B+HdM5WZvhevrGKNt7RFw+NZ5V5fe3NyjYriPeIsoEemSIhbG+p4Sg747LQGbirhziayrjarQaLje2XXQxrnlCfm2c/bngVVJLfMVE3oGw8hnrC0tRB9OJzDKdL6eq2UhlYsBV5dW91pRJrgpylIgnHXMRw7WpnM72QMgZNLwT5lKJ6eCvySBDDJZ1rB6PNxJbBoR7+/MqvmRP3F/0Xtg721unn2tKgsbs1kGGxVPvDzaSodpvQa6wV8m5pRh44SIUggjlVtNSdiNO7oafl/SjWIcSAkryhFP1aMZwvyT/417DOn9t/uYZH3l05PzJbZemFyeQkwkfGC9zPsigN0dZ/eQncxwOJjXgjx6xrs8RGoFaKlhJLIifaeam7yad7fgifVWVFYapYcaX66RGoT/0mkuOS1zZd10YwA3/5Ur2OiyWxuesx96ZtlYHclslUP2NmPCUG7RtzurZhLAW+j/oqZtCYO3sHvB10utE4osRqsA97f66Y=
+  - GPG_KEY_NAME=navikt
+  - secure: kV3alPD+IuHx7ZZZa7ASx5+Xl7DiYYwO6GaEXGHrq810K9YT3f5AqhqsAgtS+9gmJn8jV7xclZH/RS5zg6zbpK+p5FVJIBm8DJDR2LvLuFSD2F473Jphefl3uMqXl3cqN1q08dwzhMLLBYXoITWWb4PBXTv+a0djteuxHbNPLhh26XAlqzsZ96X67qKutPrAQpJ6gAPdSYIrkIinm7jR05QXJMi7wxYqIyJkC78zVAdIqLItpl3AUM06kTk5y2VrEPinAXjjaH3Amp/VwYcYOhc8hdrxz1tu4Xcaa26m+jZunDyTeP+v4S87gpWdcgxrcgpp0yyt63KZmYJTgGa1T4S7+f+nol9KufV6NEVNZl0PtfOKRY8bdUbW4Qu3jMZdUvLTwcSPd1IBH1PK2lKQhTvnHq8/40Hd8AAOPajp6/e9ctLvXpOtb7WXxhGTSixCB3/kgnt7A2msOsVCcNz7mNqDqVtK71/oaLihpzQaJUdUlPSPNpzdWNtUaTBrHwxMRVYtAc2lKopthbgWqiob7DhyJEWoLArJ6poaTJbL0RPTVLXd/PEdRRsUV4cait1T2/a1ph/RIPae8400VY+xAvBmFaa9v/0CBn2KvknZrmW0voeL5K8dyUG+kamXtRrbbdzfRbLVrLx7asBBkCge3vVKyTBDQkHXQJlbal7feGY=
+before_install:
+- openssl aes-256-cbc -K $encrypted_e61a390fed0f_key -iv $encrypted_e61a390fed0f_iv
+  -in travis/codesigning.asc.enc -out travis/codesigning.asc -d
