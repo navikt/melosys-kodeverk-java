@@ -10,8 +10,8 @@ script:
 - |
     set -e
     if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
-        gpg --fast-import travis/codesigning.asc
-        mvn -B --settings travis/settings.xml deploy -Prelease -DskipTests=true
+        gpg --fast-import ../travis/codesigning.asc
+        mvn -B --settings ../travis/settings.xml deploy -Prelease -DskipTests=true
     fi
 env:
   global:
