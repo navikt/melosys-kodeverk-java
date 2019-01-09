@@ -7,6 +7,11 @@
     <groupId>no.nav.melosys</groupId>
     <artifactId>melosys-internt-kodeverk</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>melosys-internt-kodeverk</name>
+    <description>Genereate Enum classes from configuration file</description>
+    <url>https://github.com/navikt/melosys-kodeverk-java</url>
 
     <licenses>
         <license>
@@ -119,23 +124,6 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>empty-javadoc-jar</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>javadoc</classifier>
-                                    <classesDirectory>${basedir}/src/main/javadoc</classesDirectory>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
                     <!--
                               This is a workaround to create an empty javadoc file.
                               Sonatype OSS requires all artifacts to have a javadoc file, but
@@ -146,6 +134,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <id>empty-javadoc-jar</id>
@@ -160,7 +149,6 @@
                             </execution>
                         </executions>
                     </plugin>
-
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
