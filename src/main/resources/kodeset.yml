@@ -1,0 +1,267 @@
+aktoerroller:
+  BRUKER: Bruker
+  ARBEIDSGIVER: Arbeidsgiver
+  REPRESENTANT: Fullmektig
+  MYNDIGHET: Trygdemyndighet
+avklartefaktatype:
+  AVKLARTE_ARBEIDSGIVER: Avklarte Arbeidsgiver
+  TIDLIGERE_LOVVALGSPERIODE: Tidligere Lovvalgsperiode
+  ARBEIDSLAND: Arbeidsland
+  ARBEID_SOKKEL_SKIP: Arbeid Sokkel Skip
+  YRKESGRUPPE: Yrkesgruppe
+  AG_FORRETNINGSLAND: Ag_forretningsland
+  BOSTEDSLAND: Bostedsland
+dokumenttitler:
+  ARBF: Arbeidsforhold
+  BKR_MEDL: Bekreftelse på medlemskap i folketrygden
+  INNT_SKAT: Inntektsopplysninger
+  MERK: Merknad til sak
+  STUDIE_DOKUMENTASJON: Studiedokumentasjon
+  SOK_MED: Søknad om medlemskap
+  BEKR_UNNT_FRA_MEDL: Unntak
+  ANNET: Annet (=fritekst)
+behandlinger:
+  behandlingsresultattyper:
+    FASTSATT_LOVVALGSLAND: Lovvalgsland er foreløpig fastsatt
+    FORELOEPIG_FASTSATT_LOVVALGSLAND: Lovvalgsland er foreløpig fastsatt
+    HENLEGGELSE: Saken er henlagt
+    ANMODNING_OM_UNNTAK: Anmodning om unntak
+    IKKE_FASTSATT: IKKE_FASTSATT
+  behandlingsstatus:
+    OPPRETTET: Behandlingen er opprettet
+    UNDER_BEHANDLING: Behandlingen pågår
+    AVSLUTTET: Behandlingen er avsluttet
+    AVVENT_DOK_UTL: Avventer svar fra utenlandsk trygdemyndighet
+    AVVENT_DOK_PART: Avventer svar fra part i saken
+    ANMODNING_UNNTAK_SENDT: Anmodning om unntak er sendt
+    VURDER_DOKUMENT: Vurdere dokument
+    TIDSFRIST_UTLOEPT: Tidsfristen er utløpt på etterspurte opplysninger
+    FORELOEPIG_LOVVALG: Avventer svar på foreløpig lovvalg
+    IVERKSETTER_VEDTAK: Vedtak iverksettes
+  behandlingstyper:
+    SOEKNAD: Søknad
+    KLAGE: Klage
+    ANKE: Anke
+    UNNTAK_FRA_MEDLEMSKAP: Registrering av unntak
+    NORGE_UTPEKT: Behandle at Norge er utpekt
+    PAASTAND_UTL: Behandle påstand fra utlandet
+    NY_VURDERING: Behandle ny vurdering
+    ENDRET_PERIODE: Behandle forkortet periode
+begrunnelser:
+  bosted:
+    OPPHOLD_MER_ENN_12_MND: Oppholdet er mer enn 12 måneder.
+    HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE: Har ikke forutgående bosted i Norge.
+    IKKE_INTENSJON_OM_RETUR: Har ikke intensjon om retur til Norge.
+    FAMILIE_BOR_IKKE_I_NORGE: Familie bor ikke i Norge.
+    STUDIER_FINANSIERES_IKKE_FRA_NORGE: Studier finansieres ikke fra Norge.
+    HAR_IKKE_STUDIESTED_I_UTLANDET: Har ikke studiested i utlandet.
+  forutgaendeMedlemskap:
+    IKKE_LOENNET_UTSEND_AG: >-
+      Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge forutgående
+      måned.
+    IKKE_LOENNET_NORGE: >-
+      Mottok IKKE lønn fra annen arbeidsgiver opptjent i Norge forutgående
+      måned.
+    UNNTATT_MEDLEMSKAP: Har direkte forutgående medlemskap i MEDL.
+    MOTTAT_LOENN_UTL: Mottok lønn opptjent i annet land forutgående måned.
+    IKKE_FOLKEREGISTRERT_NORGE: Har ikke TPS-adresse i Norge.
+    IKKE_ANSATT_UTSEND_AG: Er IKKE registrert i Aa-registeret hos utsendende arbeidsgiver.
+  ikkeSkip:
+    IKKE_EGET_FREMDRIFT: Ikke eget fremdrift
+    IKKE_ORDINAERT_SKIPSFART: Ikke ordinært skipsfart
+  opphold:
+    FEIL_LAND_JOURNALFOERING: Feil land oppgitt i journalføringen.
+    UGYLDIG_TERRITORIE: Søker skal til et territorium som ikke er en del av forordningen.
+    NYE_OPPLYSNINGER: Nye opplysninger om arbeids/oppholdsland.
+  vesentligVirksomhet:
+    KUN_ADMIN_ANSATTE: Foretaket har kun administrativt ansatte i Norge.
+    FORLITE_OMSETNING_NORGE: >-
+      Foretaket har ikke hatt mer enn 25 % av sin omsetning i Norge de siste 12
+      månedene.
+    FORMANGE_ADMIN_ANSATTE: >-
+      Foretakets andel administrativt ansatte er større enn den totale andel
+      ansatte som utfører sitt arbeid i Norge.
+    REKRUTTERER_ANSATTE_UTL: Foretaket rekrutterer ikke ansatte i Norge.
+    FORLITE_OPPDRAG_NORGE: Foretaket utfører mindre enn 50 % av sine oppdrag i Norge.
+    FORLITE_KONTRAKTER_NORGE: Foretaket inngår mindre enn 50 % av sine kontrakter med kunder i Norge.
+    KONTRAKTER_IKKE_NORSKLOV: >-
+      Det er ikke norsk lovgivning som er gjeldende for kontraktene foretaket
+      inngår med sine kunder.
+  normaltDriverVirksomhet:
+    IKKE_FORUTGAAENDE_DRIFT: Ikke tilstrekkelig forutgående drift
+    HAR_IKKE_NØDVENDIG_INFRASTRUKTUR: Ikke nødvendig utstyr eller fasiliteter
+    OPPRETTHOLDER_IKKE_LISENSER_AUTORISASJON: Opprettholder ikke nødvendige lisenser eller autorisasjoner
+  art12_1_Begrunnelser:
+    UTSENDELSE_OVER_24_MN: Utsendelseperioden overskrider 24 måneder
+    ERSTATTER_ANNEN: Erstatter en annen utsendt person
+    IKKE_VESENTLIGVIRKSOMHET: Arbeidsgiver har ikke vesentlig virksomhet.
+    IKKE_UTSENDT_PAA_OPPDRAG_FOR_AG: Ikke sendt ut for å utføre oppdrag for det norske foretaket
+    IKKE_OMFATTET_LENGE_NOK_I_NORGE_FOER: Ikke omfattet av norsk trygd 1 mn før utsendelse
+    UNDER_2_MN_SIDEN_FORRIGE_UTSENDING_TIL_SAMME_LAND: Mindre enn 2 mn siden søker var utsendt for å utføre oppdrag i samme land for samme foretak
+    IKKE_VESENTLIG_VIRKSOMHET: Foretaket har ikke vesentlig virksomhet
+  art12_1_Forutgaaende_Medl_Begrunnelse:
+    UNNTATT_MEDLEMSKAP: Unntak i MEDL
+    FOLKEREGISTRERT_IKKE_ARBEIDET_I_NORGE: Bor, men har arbeidet utenfor Norge
+    IKKE_FOLKEREGISTRERT_ELLER_ARBEIDET_I_NORGE: Hverken bor eller arbeidet i Norge
+  art12_1_Vesentlig_Virksomhet_Begrunnelser:
+    KUN_ADMIN_ANSATTE: Kun administrativt ansatte i Norge
+    FOR_LITE_OMSETNING_NORGE: Mindre enn 25 % av totalomsetningen er opptjent i Norge
+    FOR_MANGE_ADMIN_ANSATTE: Mer enn 50 % av de ansatte som arbeider i Norge, er administrativt ansatte
+    REKRUTTERER_ANSATTE_UTL: Ansatte rekrutteres hovedsakelig i utlandet
+    FOR_LITE_OPPDRAG_NORGE: Mindre enn 50 % av oppdragene uføres i Norge
+    FOR_LITE_KONTRAKTER_NORGE: Færre enn 50 % av kundekontraktene inngås i Norge
+    KONTRAKTER_IKKE_NORSK_LOV: Norsk rett gjelder ikke for kontraktene
+  art12_2_Begrunnelser:
+    UTSENDELSE_OVER_24_MN: Utsendelseperioden overskrider 24 måneder.
+    IKKE_LIGNENDE_VIRKSOMHET: Ikke lignende virksomhet.
+    NORMALT_IKKE_DRIFT_NORGE: Normalt ikke drift i Norge.
+  art12_2_Normalt_Virksomhet_Begrunnelser:
+    IKKE_FORUTGAAENDE_DRIFT: Ikke tilstrekkelig forutgående drift
+    IKKE_GJENOPPTA_DRIFT: Kan ikke gjenoppta drift
+  art16_1_Anmodning_Begrunnelser:
+    UTSENDELSE_MELLOM_24_MN_OG_5_AAR: Utsendelseperioden er mer enn 24 mn og minde enn 5 år.
+    LOENNET_UTL_ENHET_I_KONSERN: Lønnes av utenlandsk foretak som er del av samme konsern.
+    HJEMMEKONTOR_UNDER_12_MN: Arbeider på hjemmekontor under 12 mnd.
+    HJEMMEKONTOR_MEDFOELGENDE: Medfølgende som arbeider på hjemmekontor.
+    MEDFOELGENDE_LITEN_STILLINGSPROSENT: Medfølgende som arbeider lokalt med liten stillingsprosent.
+    IDEELL_ORGANISASJON_ULOENNET: Frivillig arbeid for ideell organisasjon.
+    IDEELL_ORGANISASJON_LOENNET_IKKE_VESENTLIG_VIRK: Arbeider for ideell organisasjon som ikke har vesentlig virksomhet i Norge.
+    STUDENT_MED_KORTVARIG_STUDIERELATERT_ARBEID: Student med kortvarig studierelatert arbeid i vertslandet.
+    ARBEIDSKONTRAKT_VERTSLAND_STIPEND_FRA_NORSKE_STAT: Arbeidskontrakt i vertslandet og stipend fra Den norske stat.
+brev:
+  produserbartDokument:
+    INNVILGELSE_YRKESAKTIV: Innvilgelse yrkesaktiv
+    MELDING_FORVENTET_SAKSBEHANDLINGSTID: Melding om forventet sakbehandlingstid
+    ORIENTERING_ANMODNING_UNNTAK: Orienteringsbrev om anmodning unntak
+    MELDING_MANGLENDE_OPPLYSNINGER: Melding om manglende opplysninger
+    MELDING_HENLAGT_SAK: Melding om henlagt sak
+    ATTEST_A1: Attest A1
+    SED_A001: SED_A001
+finansiering:
+  LAANEKASSEN: Lånekassen
+  UTENLANDSK_INSTITUSJON: Utenlandsk institusjon
+  EGNE_MIDLER: Egne midler / arv / etc
+henleggelsesgrunner:
+  SOEKNADEN_TRUKKET: Søknaden er trukket
+  OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
+  ANNET: Fritekstfelt
+landkoder:
+  BE: Belgia
+  BG: Bulgaria
+  CH: Sveits
+  CZ: Tsjekkia
+  DK: Danmark
+  EE: Estland
+  FI: Finland
+  FO: Færøyene
+  FR: Frankrike
+  GL: Grønland
+  GR: Hellas
+  IE: Irland
+  IS: Island
+  IT: Italia
+  HR: Kroatia
+  CY: Kypros
+  LV: Latvia
+  LI: Liechtenstein
+  LT: Litauen
+  LU: Luxembourg
+  MT: Malta
+  NL: Nederland
+  NO: Norge
+  PL: Polen
+  PT: Portugal
+  RO: Romania
+  SK: Slovakia
+  SI: Slovenia
+  ES: Spania
+  GB: Storbritannia
+  SE: Sverige
+  DE: Tyskland
+  HU: Ungarn
+  AT: Østerrike
+lovvalgsbestemmelser:
+  lovvalgsBestemmelser_883_2004:
+    FO_883_2004_ART11_1: Fo 883/2004 Artikkel 11 nr. 1
+    FO_883_2004_ART11_3A: Fo 883/2004 Artikkel 11 nr. 3 bokstav a
+    FO_883_2004_ART11_3B: Fo 883/2004 Artikkel 11 nr. 3 bokstav b
+    FO_883_2004_ART11_3C: Fo 883/2004 Artikkel 11 nr. 3 bokstav c
+    FO_883_2004_ART11_3E: Fo 883/2004 Artikkel 11 nr. 3 bokstav e
+    FO_883_2004_ART11_4_2: Fo 883/2004 Artikkel 11 nr. 4 andre punktum
+    FO_883_2004_ART12_1: Fo 883/2004 Artikkel 12 nr. 1
+    FO_883_2004_ART12_2: Fo 883/2004 Artikkel 12 nr. 2
+    FO_883_2004_ART13_1A: Fo 883/2004 Artikkel 13 nr. 1 bokstav a
+    ART13_1A: Fo 883/2004 Artikkel 13 nr. 1 bokstav a
+    FO_883_2004_ART13_1B1: Fo 883/2004 Artikkel 13 nr. 1 bokstav b i)
+    FO_883_2004_ART13_1_B2: Fo 883/2004 Artikkel 13 nr. 1 bokstav b ii)
+    FO_883_2004_ART13_1_B3: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iii)
+    FO_883_2004_ART13_1_B4: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iv)
+    FO_883_2004_ART13_2A: Fo 883/2004 Artikkel 13 nr. 2 bokstav a
+    FO_883_2004_ART13_2B: Fo 883/2004 Artikkel 13 nr. 2 bokstav b
+    FO_883_2004_ART13_3: Fo 883/2004 Artikkel 13 nr. 3
+    FO_883_2004_ART13_4: Fo 883/2004 Artikkel 13 nr. 4
+    FO_883_2004_ART16_1: Fo 883/2004 Artikkel 16 nr. 1
+    FO_883_2004_ART16_2: Fo 883/2004 Artikkel 16 nr. 2
+    FO_883_2004_ANNET: FO_883_2004_ANNET
+  LovvalgsBestemmelser_987_2009:
+    FO_987_2009_ART14_11: Fo 987/2009 Artikkel 14 nr. 11
+  TilleggsBestemmelser_883_2004:
+    FO_883_2004_ART11_2: Fo 883/2004 Artikkel 11 nr. 2
+    FO_883_2004_ART11_4_1: Fo 883/2004 Artikkel 11 nr. 4 første punktum
+    FO_883_2004_ART11_5: Fo 883/2004 Artikkel 11 nr. 5
+    FO_883_2004_ART13_4: Fo 883/2004 Artikkel 13 nr. 4
+    FO_883_2004_ART87_7: Fo 883/2004 Artikkel 87 nr. 7
+    FO_883_2004_ART87A: Fo 883/2004 Artikkel 87a
+medlemskapstyper:
+  PLIKTIG: Pliktig medlemskap
+  FRIVILLIG: Frivillig medlemskap
+  UNNTATT: Uten dekning
+mottaksretning:
+  INN: Inngående dokument
+  UT: Utgående dokument
+  NOTAT: Internt notat
+oppgavetyper:
+  BEH_SAK: Behandling
+  JFR: Journalføring
+representerer:
+  BRUKER: Representerer bruker
+  ARBEIDSGIVER: Representerer arbeidsgiver
+  BEGGE: Representerer bruker og arbeidsgiver
+saksstatuser:
+  OPPRETTET: Saken har blitt opprettet
+  LOVVALG_AVKLART: Lovvalget er avklart
+  AVSLUTTET: Saken er avsluttet
+  HENLAGT: Saken er henlagt
+sakstyper:
+  EU_EOS: EU/EØS
+  TRYGDEAVTALE: Trygdeavtale
+  FTRL: Folketrygdloven
+trygdedekninger:
+  UTEN_DEKNING: Uten dekning
+  FULL_DEKNING_EOSFO: Full medlemskap i trygden for ytelser omfattet av EU/EØS forordningen.
+vedleggstitler:
+  TITTEL_1: Vedleggstittel 1
+  TITTEL_2: Vedleggstittel 2
+  ANNET: Annet...
+vilkaar:
+  FO_883_2004_INNGANGSVILKAAR: FO_883_2004_INNGANGSVILKAAR
+  FO_883_2004_ART12_1: FO_883_2004_ART12_1
+  FO_883_2004_ART12_2: FO_883_2004_ART12_2
+  FO_883_2004_ART16_1: FO_883_2004_ART16_1
+  ART12_1_VESENTLIG_VIRKSOMHET: ART12_1_VESENTLIG_VIRKSOMHET
+  ART12_1_FORUTGAAENDE_MEDLEMSKAP: ART12_1_FORUTGAAENDE_MEDLEMSKAP
+  ART12_2_NORMALT_DRIVER_VIRKSOMHET: ART12_2_NORMALT_DRIVER_VIRKSOMHET
+  FO_883_2004_ART87A: Fo 883/2004 Artikkel 87a
+  BOSATT_I_NORGE: BOSATT_I_NORGE
+  FTRL_2_12_UNNTAK_TURISTSKIP: FTRL_2_12_UNNTAK_TURISTSKIP
+yrker:
+  yrkesaktivitetstyper:
+    LOENNET_ARBEID: Er i lønnet arbeid.
+    FRILANSER: Arbeider som frilanser hos en norsk arbeidsgiver.
+    SELVSTENDIG: Arbeider som selvstendig næringsdrivende.
+  yrkesgrupper:
+    SOKKEL_ELLER_SKIP: Arbeider på sokkel eller skip.
+    FLYENDE_PERSONELL: Arbeider som flyende personell.
+    ORDINAER: >-
+      Ordinær arbeid som ikke gjelder flyende personell eller på sokkel eller
+      skip.
