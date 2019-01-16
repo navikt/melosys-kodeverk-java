@@ -2,12 +2,14 @@ language: java
 jdk:
   - openjdk8
 script:
-  - mkdir melosys-kodeverk
-  - mvn clean install -B -V
-  - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
-  - cd melosys-kodeverk
-  - mvn clean install -B -V -X
-  - ls -lR ./melosys-kodeverk
+  #- mkdir melosys-kodeverk
+  #- mvn install -B -V
+  #- java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
+  #- cd melosys-kodeverk
+  - ./home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/mvn compile -B -V
+  - ls -lR /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target
+  - ./home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/mvn package
+  - ls -lR /home/travis/build/navikt/melosys-kodeverk-java/
   #- |
   #  set -e
   #  if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
