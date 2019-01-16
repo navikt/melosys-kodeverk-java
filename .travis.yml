@@ -8,18 +8,13 @@ script:
   - mvn install -B -V
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
   - cd melosys-kodeverk
-  - pwd
-  - ls -lR .
   - mvn clean install -B -V
-  #- mvn install MAVEN_SKIP_RC=true -f /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/pom.xml
-  - ls -lR /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target
-  - ls -lR /home/travis/build/navikt/melosys-kodeverk-java/
-  #- |
-  #  set -e
-  #  if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
-  #      gpg --fast-import ../travis/codesigning.asc
-  #      mvn -B --settings ../travis/settings.xml deploy -Prelease -DskipTests=true
-  #  fi
+  - |
+    set -e
+    if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
+        gpg --fast-import ../travis/codesigning.asc
+        mvn -B --settings ../travis/settings.xml deploy -Prelease -DskipTests=true
+    fi
 env:
   global:
   - OSSRH_JIRA_USERNAME=navikt
