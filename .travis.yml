@@ -7,7 +7,7 @@ script:
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
   - cd melosys-kodeverk
   - mvn clean install -B -V -X
-  - ls -l /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target/classes
+  - ls -l /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/src/main/java/no/nav/melosys
   #- |
   #  set -e
   #  if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
