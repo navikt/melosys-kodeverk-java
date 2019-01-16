@@ -40,7 +40,7 @@ public class KodeverkServiceIT extends AssertionValidator {
     public void lagSourceCode_sourceFilIkkeNull_skrivJavaSourceCode() throws IOException {
 
         kodeverkService.yamlTilJavaKildeFiler();
-        File aktoerRoller = new File("melosys-kodeverk\\src\\main\\java\\no\\nav\\melosys\\domain\\kodeverk\\Aktoerroller.java");
+        File aktoerRoller = new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk/Aktoerroller.java");
         assertTrue(aktoerRoller.exists());
         String contents = new String(Files.readAllBytes(Paths.get(aktoerRoller.toString())));
         validerEnumVerdier(contents);
@@ -49,6 +49,6 @@ public class KodeverkServiceIT extends AssertionValidator {
     @Test
     public void kopiStandardJavaFiler_fraResources_kopiererFiler() throws IOException {
         kodeverkService.kopiStandardJavaFiler();
-        assertTrue(new File("melosys-kodeverk\\src\\main\\java\\no\\nav\\melosys\\domain\\kodeverk\\Kodeverk.java").exists());
+        assertTrue(new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk/Kodeverk.java").exists());
     }
 }

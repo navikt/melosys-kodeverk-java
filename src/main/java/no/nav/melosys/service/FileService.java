@@ -16,7 +16,7 @@ public class FileService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileService.class);
 
-    public File lesFil(String path) {
+     File lesFil(String path) {
         try {
             return new ClassPathResource(path).getFile();
         } catch (IOException e) {
@@ -24,7 +24,7 @@ public class FileService {
         }
     }
 
-    public byte[] lesFilTilByteArray(String path) {
+    byte[] lesFilTilByteArray(String path) {
         try {
             ClassPathResource classPathResource = new ClassPathResource(path);
             return FileCopyUtils.copyToByteArray(classPathResource.getInputStream());
@@ -34,7 +34,7 @@ public class FileService {
         }
     }
 
-    public File lagJavaKildeFil(String mappe, String navn) {
+    File lagJavaKildeFil(String mappe, String navn) {
         try {
             if (StringUtils.isEmpty(navn)) {
                 throw new RuntimeException("Lagring av java klass fil feilet fordi klass navn er null ellers tom");
@@ -47,7 +47,7 @@ public class FileService {
         }
     }
 
-    public void kopiFilTilMappe(File filIn, File filUt) {
+    void kopiFilTilMappe(File filIn, File filUt) {
         try {
             FileCopyUtils.copy(lesFilTilByteArray(filIn.toString()), filUt);
         } catch (IOException e) {
@@ -55,7 +55,7 @@ public class FileService {
         }
     }
 
-    public void lagJavaPackageMapper(String mappe) {
+    void lagJavaPackageMapper(String mappe) {
         if (StringUtils.isEmpty(mappe)) {
             throw new RuntimeException("Kan ikke lagre mappe fordi mappe navn er null ellers tom");
         }
@@ -63,7 +63,7 @@ public class FileService {
         sourceFile.mkdirs();
     }
 
-    public void skriveKildeKode(File javaSourceFil, String sourceCode) {
+    void skriveKildeKode(File javaSourceFil, String sourceCode) {
         try {
             if (!(javaSourceFil.exists() && javaSourceFil.canWrite())) {
                 throw new RuntimeException("Lagring av java klass fil feilet fordi java klass filen ikke eksisterer ellers ikke skrivebart ");

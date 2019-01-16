@@ -30,8 +30,8 @@ public class FileServiceIT {
 
     @Test
     public void lagJavaPackageMapper_forGittSti_mappenErOpprettet() throws Exception {
-        fileService.lagJavaPackageMapper("melosys-kodeverk\\src\\main\\java\\no\\nav\\melosys\\domain\\kodeverk");
-        assertTrue(new File("melosys-kodeverk\\src\\main\\java\\no\\nav\\melosys\\domain\\kodeverk").exists());
+        fileService.lagJavaPackageMapper("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk");
+        assertTrue(new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk").exists());
     }
 
 }

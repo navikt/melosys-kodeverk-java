@@ -25,7 +25,6 @@ public class Application implements CommandLineRunner {
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
         exit(0);
-
     }
 
     @Override

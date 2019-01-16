@@ -2,7 +2,7 @@ package no.nav.melosys.service;
 
 import static org.junit.Assert.assertTrue;
 
-public class AssertionValidator {
+class AssertionValidator {
 
     void validerEnumVerdier(String contents) {
         assertTrue(contents.contains("BRUKER"));

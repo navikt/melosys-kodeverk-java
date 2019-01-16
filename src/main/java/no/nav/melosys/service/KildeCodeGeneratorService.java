@@ -5,14 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.joining;
 
 @Component
 public class KildeCodeGeneratorService {
@@ -25,9 +24,9 @@ public class KildeCodeGeneratorService {
 
     private final FreeMarkerTemplateService freeMarkerTemplateService;
 
-    private List<String> interntKodeverkTabellEnumFiler;
+    private final List<String> interntKodeverkTabellEnumFiler;
 
-    private List<String> lovvalgBestemmelseEnumFiler;
+    private final List<String> lovvalgBestemmelseEnumFiler;
 
     @Autowired
     public KildeCodeGeneratorService(@Value("#{'${interntkodeverktabell.enum.filer}'.split(',')}") List<String> interntkodeverktabellEnumFiler,
@@ -38,15 +37,12 @@ public class KildeCodeGeneratorService {
         this.freeMarkerTemplateService = freeMarkerTemplateService;
     }
 
-    public String genererEnumKildeKode(String classNavn, Map<String, Object> enumMap) {
+    String genererEnumKildeKode(String classNavn, Map<String, Object> enumMap) {
         Map root = new HashMap();
         root.put("classNavn", classNavn);
 
         String template = velgTemplate(classNavn);
 
-        if(template.equals(LOVVALGBESTEMMELSE_TEMPLATE)) {
-
-        }
         String enumList = enumMap.entrySet().stream()
             .map((kode) -> processor(template, kode).get())
             .collect(joining(",\n\t"))
@@ -61,13 +57,13 @@ public class KildeCodeGeneratorService {
         }
     }
 
-    static Supplier<String> processor(String template, Map.Entry kode) {
+    private Supplier<String> processor(String template, Map.Entry kode) {
         return template.equals(LOVVALGBESTEMMELSE_TEMPLATE) ?
             () -> kode.getKey() + "( \"" + kode.getValue() + "\")" :
             () -> kode.getKey() + "(\"" + kode.getKey() + "\", \"" + kode.getValue() + "\")";
     }
 
-    public String velgTemplate(String classNavn) {
+    String velgTemplate(String classNavn) {
         if (interntKodeverkTabellEnumFiler.contains(classNavn)) {
             return INTERNKODEVERKTABELL_TEMPLATE;
         } else if (lovvalgBestemmelseEnumFiler.contains(classNavn)) {

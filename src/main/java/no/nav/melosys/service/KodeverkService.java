@@ -38,7 +38,7 @@ public class KodeverkService {
         this.kildeCodeGeneratorService = kildeCodeGeneratorService;
     }
 
-    public HashMap<String, Object> yamlTilMelosysInternKodeverkObject() throws IOException {
+    HashMap<String, Object> yamlTilMelosysInternKodeverkObject() throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         return mapper.readValue(new String(fileService.lesFilTilByteArray(internKodeverkYaml)), HashMap.class);
     }
@@ -50,7 +50,7 @@ public class KodeverkService {
         traverserHashMap("", melosysInternKodeverk, new HashSet<>());
     }
 
-    public void kopiStandardJavaFiler() {
+    void kopiStandardJavaFiler() {
         fileService.kopiFilTilMappe(new File("standard", "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
         standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File("standard", s), new File(enumKildeKodeMappe, s + ".java")));
     }

@@ -4,7 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.HashMap;
 import java.util.Map;
 
 import freemarker.template.Configuration;
@@ -23,7 +22,7 @@ public class FreeMarkerTemplateService {
         cfg.setClassForTemplateLoading(this.getClass(), templateMappe);
     }
 
-    public String generereKildeKodeFraTemplate(Map root, String templateNavn) throws IOException, TemplateException {
+    String generereKildeKodeFraTemplate(Map root, String templateNavn) throws IOException, TemplateException {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
             Template temp = cfg.getTemplate(templateNavn);
@@ -33,7 +32,7 @@ public class FreeMarkerTemplateService {
 
     }
 
-    public Configuration getCfg() {
+    Configuration getCfg() {
         return cfg;
     }
 }
