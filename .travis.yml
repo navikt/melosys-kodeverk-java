@@ -5,9 +5,9 @@ script:
   - mkdir melosys-kodeverk
   - mvn clean install -B -V
   - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
-  - ls -l /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target/classes
   - cd melosys-kodeverk
   - mvn clean install -B -V -X
+  - ls -l /home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target/classes
   #- |
   #  set -e
   #  if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
