@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
@@ -11,6 +13,8 @@ import org.springframework.util.StringUtils;
 
 @Component
 public class FileService {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileService.class);
 
     public File lesFil(String path) {
         try {
@@ -65,6 +69,7 @@ public class FileService {
                 throw new RuntimeException("Lagring av java klass fil feilet fordi java klass filen ikke eksisterer ellers ikke skrivebart ");
             }
 
+            LOGGER.info("Skriver i fil {}", javaSourceFil.getAbsolutePath());
             FileWriter writer = new FileWriter(javaSourceFil);
             writer.write(sourceCode);
             writer.close();

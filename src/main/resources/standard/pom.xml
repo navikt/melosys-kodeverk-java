@@ -61,10 +61,6 @@
     </dependencies>
 
     <build>
-        <directory>/home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target</directory>
-        <outputDirectory>/home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/target/classes</outputDirectory>
-        <finalName>${project.artifactId}-${project.version}</finalName>
-        <sourceDirectory>/home/travis/build/navikt/melosys-kodeverk-java/melosys-kodeverk/src</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

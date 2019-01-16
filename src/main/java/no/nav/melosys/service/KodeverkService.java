@@ -74,5 +74,7 @@ public class KodeverkService {
         File sourceFile = fileService.lagJavaKildeFil(enumKildeKodeMappe, classNavn);
         String sourceCode = kildeCodeGeneratorService.genererEnumKildeKode(classNavn, enumVerdier);
         fileService.skriveKildeKode(sourceFile, sourceCode);
+        LOGGER.info("Generer java class for : {} ", classNavn);
+
     }
 }
