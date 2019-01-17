@@ -18,6 +18,8 @@ public class KodeverkService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KodeverkService.class);
 
+    private static final String STANARD_TEMPLATE_MAPPE = "standard";
+
     private final String internKodeverkYaml;
     private final String enumKildeKodeMappe;
     private final FileService fileService;
@@ -51,8 +53,8 @@ public class KodeverkService {
     }
 
     void kopiStandardJavaFiler() {
-        fileService.kopiFilTilMappe(new File("standard", "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
-        standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File("standard", s), new File(enumKildeKodeMappe, s + ".java")));
+        fileService.kopiFilTilMappe(new File(STANARD_TEMPLATE_MAPPE, "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
+        standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File(STANARD_TEMPLATE_MAPPE, s), new File(enumKildeKodeMappe, s + ".java")));
     }
 
     private void traverserHashMap(String classNavn, HashMap<String, Object> map, Set<String> seenKey) {

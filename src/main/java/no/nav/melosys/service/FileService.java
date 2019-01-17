@@ -16,7 +16,7 @@ public class FileService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileService.class);
 
-     File lesFil(String path) {
+    File lesFil(String path) {
         try {
             return new ClassPathResource(path).getFile();
         } catch (IOException e) {
