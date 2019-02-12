@@ -59,7 +59,7 @@ public class KodeverkService {
 
     private void traverserHashMap(String classNavn, HashMap<String, Object> map, Set<String> seenKey) {
         map.forEach((key, value) -> {
-                if (value instanceof String) {
+                if (value instanceof String || value == null ) {
                     if (!seenKey.contains(classNavn)) {
                         LOGGER.info("Generer java class for : {}", classNavn);
                         objectTilJavaKildeKode(StringUtils.capitalize(classNavn), map);

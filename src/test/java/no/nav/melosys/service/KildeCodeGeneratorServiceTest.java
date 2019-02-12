@@ -28,7 +28,7 @@ public class KildeCodeGeneratorServiceTest extends AssertionValidator {
     }
 
     @Test
-    public void genererEnumKildeKodeForInterntKodeverkTabell_classNavnOgEnumInformasjonFinnes_genererKildeKoden() throws Exception {
+    public void genererEnumKildeKodeForInterntKodeverkTabell_classNavnOgEnumInformasjonFinnes_kildeKodenErGenerert() {
 
         List<String> interntkodeverktabellEnumFiler = new LinkedList<>();
         List<String> LovvalgBestemmelseEnumFiler = new LinkedList<>();
@@ -50,7 +50,29 @@ public class KildeCodeGeneratorServiceTest extends AssertionValidator {
     }
 
     @Test
-    public void velgTemplateType_classNavnFinnesList_velgRiktigTemplate() throws Exception {
+    public void genererEnumKildeKode_valueIMapErNull_genererKildeKoden() {
+
+        List<String> interntkodeverktabellEnumFiler = new LinkedList<>();
+        List<String> LovvalgBestemmelseEnumFiler = new LinkedList<>();
+
+        kildeCodeGeneratorService = new KildeCodeGeneratorService(
+            interntkodeverktabellEnumFiler,
+            LovvalgBestemmelseEnumFiler,
+            freeMarkerTemplateService);
+
+        Map<String, Object> kodeTermer = new HashMap<>();
+        kodeTermer.put("BRUKER", null);
+        kodeTermer.put("ARBEIDSGIVER", null);
+        kodeTermer.put("REPRESENTANT", null);
+        kodeTermer.put("MYNDIGHET", null);
+
+        String kildeKode = kildeCodeGeneratorService.genererEnumKildeKode("Aktoerroller", kodeTermer);
+        validerEnumVerdier(kildeKode);
+
+    }
+
+    @Test
+    public void velgTemplateType_classNavnFinnesList_velgRiktigTemplate() {
 
         List<String> interntkodeverktabellEnumFiler = new LinkedList<>();
         interntkodeverktabellEnumFiler.add("Aktoerroller");
