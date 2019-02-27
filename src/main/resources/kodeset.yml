@@ -117,6 +117,7 @@ begrunnelser:
     FAST_INSTALLASJON: Fast installasjon
 brev:
   produserbaredokumenter:
+    AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
     MELDING_FORVENTET_SAKSBEHANDLINGSTID: Melding om forventet sakbehandlingstid
     MELDING_MANGLENDE_OPPLYSNINGER: Melding om manglende opplysninger
     MELDING_HENLAGT_SAK: Melding om henlagt sak
@@ -264,12 +265,15 @@ vilkaar:
   FO_883_2004_ART12_1: null
   FO_883_2004_ART12_2: null
   FO_883_2004_ART16_1: null
+  FO_883_2004_ART11_3A: null
+  FO_883_2004_ART11_4_1: null
+  FO_883_2004_ART11_4_2: null
   ART12_1_VESENTLIG_VIRKSOMHET: null
-  ART12_1_FORUTGAAENDE_MEDLEMSKAP: FO_
+  ART12_1_FORUTGAAENDE_MEDLEMSKAP: null
   ART12_2_NORMALT_DRIVER_VIRKSOMHET: null
   FO_883_2004_ART87A: null
   BOSATT_I_NORGE: null
-  FTRL_2_12_UNNTAK_TURISTSKIP: Folketrygdloven § 2-12
+  FTRL_2_12_UNNTAK_TURISTSKIP: null
 yrker:
   yrkesaktivitetstyper:
     LOENNET_ARBEID: Er i lønnet arbeid.
