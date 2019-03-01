@@ -126,6 +126,7 @@ brev:
     ORIENTERING_ANMODNING_UNNTAK: Orienteringsbrev om anmodning unntak
     ANMODNING_UNNTAK: Anmodning om unntak
     AVSLAG_YRKESAKTIV: Avslag eller orientering om anmodning om unntak
+    INNVILGELSE_ARBEIDSGIVER: Innvilgelse Arbeidsgiver
 dokumenttitler:
   ARBF: Arbeidsforhold
   BKR_MEDL: Bekreftelse på medlemskap i folketrygden
