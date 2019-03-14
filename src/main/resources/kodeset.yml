@@ -12,6 +12,7 @@ avklartefaktatype:
   YRKESGRUPPE: null
   SOKKEL_ELLER_SKIP: null
   BOSTEDSLAND: null
+  AARSAK_ENDRING_PERIODE: null
 behandlinger:
   behandlingsresultattyper:
     FASTSATT_LOVVALGSLAND: Lovvalgsland er fastsatt
@@ -99,6 +100,10 @@ begrunnelser:
     FAMILIE_BOR_IKKE_I_NORGE: Familie bor ikke i Norge.
     STUDIER_FINANSIERES_IKKE_FRA_NORGE: Studier finansieres ikke fra Norge.
     HAR_IKKE_STUDIESTED_I_UTLANDET: Har ikke studiested i utlandet.
+  endretperioder:
+    RETURNERT_NORGE: Arbeidstakeren har returnert til Norge
+    ARBEIDSFORHOLD_AVSLUTTET: Arbeidsforholdet med utsendende arbeidsgiver er avsluttet
+    ENDRINGER_ARBEIDSSITUASJON: Endringer i arbeidssituasjonen
   inngangsvilkaar:
     TREDJELANDSBORGER: null
     NORDISK_UTENFOR_EOS: null
