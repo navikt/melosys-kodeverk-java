@@ -86,8 +86,8 @@ begrunnelser:
     SAERLIG_GRUNN: Fritekstfelt
   art16_1_Avslag__Begrunnelser:
     SOEKT_FOR_SENT: Søkt mer enn ett år etter perioden startet
-    ERSTATTER_EN_ANNEN_SAMLET_OVER_5_AAR: 'Erstatter en annen utsendt person, samlet periode mer enn 5 år'
-    FORLENGELSE_SAMLET_OVER_5_AAR: 'Søkt om forlengelse, samlet periode mer enn fem år.'
+    OVER_5_AAR: Søkt om periode mer enn fem år
+    OVER_12_MD_UTL_ARBEIDSGIVER: 'Søkt om periode mer enn 12 md, har utenlandsk arbeidsgiver'
     INGEN_SPESIELLE_FORHOLD: Ingen spesielle forhold
     SAERLIG_AVSLAGSGRUNN: Særlig avslagsgrunn
   art11_4_Begrunnelser:
@@ -290,3 +290,6 @@ yrker:
     SOKKEL_ELLER_SKIP: null
     FLYENDE_PERSONELL: null
     ORDINAER: null
+maritimtyper:
+  SOKKEL: null
+  SKIP: null
