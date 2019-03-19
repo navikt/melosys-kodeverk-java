@@ -245,8 +245,9 @@ mottaksretning:
   UT: Utgående dokument
   NOTAT: Internt notat
 oppgavetyper:
-  BEH_SAK: Behandling
+  BEH_SAK_MK: Behandle sak (Manuell)
   JFR: Journalføring
+  VUR: Vurder dokument
 representerer:
   BRUKER: Representerer bruker
   ARBEIDSGIVER: Representerer arbeidsgiver
