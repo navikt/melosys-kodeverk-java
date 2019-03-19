@@ -245,7 +245,7 @@ mottaksretning:
   UT: Utgående dokument
   NOTAT: Internt notat
 oppgavetyper:
-  BEH_SAK: Behandling
+  BEH_SAK_MK: Behandling
   JFR: Journalføring
   VUR: Vurder dokument
 representerer:
