@@ -247,6 +247,7 @@ mottaksretning:
 oppgavetyper:
   BEH_SAK: Behandling
   JFR: Journalføring
+  VUR: Vurder dokument
 representerer:
   BRUKER: Representerer bruker
   ARBEIDSGIVER: Representerer arbeidsgiver
