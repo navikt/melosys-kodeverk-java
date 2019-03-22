@@ -4,10 +4,9 @@ aktoersroller:
   REPRESENTANT: Fullmektig
   MYNDIGHET: Trygdemyndighet
 avklartefaktatype:
-  AVKLARTE_ARBEIDSGIVER: null
+  VIRKSOMHET: null
   TIDLIGERE_LOVVALGSPERIODE: null
   ARBEIDSLAND: null
-  FLAGGLAND: null
   ARBEID_SOKKEL_SKIP: null
   YRKESGRUPPE: null
   SOKKEL_ELLER_SKIP: null
