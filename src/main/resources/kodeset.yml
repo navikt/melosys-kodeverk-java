@@ -161,7 +161,7 @@ forespoerseltyper:
   ENDRING: null
   FOERSTEGANG: null
 henleggelsesgrunner:
-  SOEKNADEN_TRUKKET: SøknIKKE_EGEN_FREMDRIFTaden er trukket
+  SOEKNADEN_TRUKKET: Søknaden er trukket
   OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
   ANNET: Fritekstfelt
 kontantytelser_eu_fo:
