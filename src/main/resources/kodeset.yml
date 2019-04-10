@@ -12,6 +12,7 @@ avklartefaktatype:
   SOKKEL_ELLER_SKIP: null
   BOSTEDSLAND: null
   AARSAK_ENDRING_PERIODE: null
+  VURDERING_UNNTAK_PERIODE: null
 behandlinger:
   behandlingsresultattyper:
     FASTSATT_LOVVALGSLAND: Lovvalgsland er fastsatt
@@ -120,6 +121,12 @@ begrunnelser:
     IKKE_ORDINAER_SKIPSFART: Skrogtypen kan ikke brukes i ordinær skipsfart
     BORESKIP: Boreskip - Sokkel
     FAST_INSTALLASJON: Fast installasjon
+  unntak_periode_begrunnelser:
+    TREDJELANDSBORGER_IKKE_AVTALELAND: null
+    OVERLAPPENDE_MEDL_PERIODER: null
+    MOTTAR_YTELSER: null
+    PERIODEN_OVER_24_MD: null
+    FEIL_I_PERIODEN: null
 brev:
   produserbaredokumenter:
     AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
