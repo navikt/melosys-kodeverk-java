@@ -127,6 +127,7 @@ begrunnelser:
     MOTTAR_YTELSER: null
     PERIODEN_OVER_24_MD: null
     FEIL_I_PERIODEN: null
+    PERIODE_FOR_GAMMEL: null
 brev:
   produserbaredokumenter:
     AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
