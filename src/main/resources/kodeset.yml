@@ -84,6 +84,27 @@ begrunnelser:
     KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV: 'Kortvarig oppdrag som selvstendig i utlandet, ikke-yrkesaktiv i Norge'
     KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER: 'Kortvarig oppdrag som selvstendig i utlandet, arbeidstaker i Norge'
     SAERLIG_GRUNN: Fritekstfelt
+  art16_1_Anmodning_Begrunnelser_Engelsk:
+    UTSENDELSE_MELLOM_24_MN_OG_5_AAR: Ongoing contract for a period longer than 2 and shorter than 5 years.
+    LOENNET_UTL_ENHET_I_KONSERN: >-
+      The person has a temporary employment contract within the same concern/conglomerate,
+      and will return to the Norwegian employer.
+    ERSTATTER_EN_ANNEN_UNDER_5_AAR: >-
+      The person is being posted to replace another posted worker,
+      and the aggregated posting period is shorter than 5 years.
+    KORT_OPPDRAG_RETUR_NORSK_AG: >-
+      The person has not been attached to the Norwegian social insurance system before posting,
+      but will return to the Norwegian employer after a brief posting.
+    IDEELL_ORGANISASJON_IKKE_VESENTLIG_VIRK: >-
+      Working for a non-profit organisation,
+      but the Norwegian organisation does not normally carry out its activity in Norway.
+    KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV: >-
+      Short-term assignment as self employed in your country.
+      Has not been performing any activity in Norway immediately prior to the assignment.
+    KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER: >-
+      Short-term assignment as self employed in your country.
+      Has not been performing self employed activity in Norway prior to the assignment.
+    SAERLIG_GRUNN: Fritekstfelt
   art16_1_Avslag__Begrunnelser:
     SOEKT_FOR_SENT: Søkt mer enn ett år etter perioden startet
     OVER_5_AAR: Søkt om periode mer enn fem år
