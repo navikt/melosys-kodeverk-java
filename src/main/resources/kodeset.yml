@@ -13,6 +13,9 @@ avklartefaktatype:
   BOSTEDSLAND: null
   AARSAK_ENDRING_PERIODE: null
   VURDERING_UNNTAK_PERIODE: null
+  MARGINALT_ARBEID: null
+  VESENTLIG_AKTIVITET_I_NORGE: null
+  ARBEIDSGIVERS_FORRETNINGSSTED: null
 behandlinger:
   behandlingsresultattyper:
     FASTSATT_LOVVALGSLAND: Lovvalgsland er fastsatt
