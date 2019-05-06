@@ -285,6 +285,7 @@ saksstatuser:
   LOVVALG_AVKLART: Lovvalget er avklart
   AVSLUTTET: Saken er avsluttet
   HENLAGT: Saken er henlagt
+  HENLAGT_BORTFALT: Saken er henlagt som bortfalt i Melosys
 sakstyper:
   EU_EOS: EU/EØS
   TRYGDEAVTALE: Trygdeavtale
