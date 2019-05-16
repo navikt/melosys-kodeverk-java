@@ -128,6 +128,14 @@ begrunnelser:
     RETURNERT_NORGE: Arbeidstakeren har returnert til Norge
     ARBEIDSFORHOLD_AVSLUTTET: Arbeidsforholdet med utsendende arbeidsgiver er avsluttet
     ENDRINGER_ARBEIDSSITUASJON: Endringer i arbeidssituasjonen
+  henleggelsesgrunner:
+    SOEKNADEN_TRUKKET: Søknaden er trukket
+    OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
+    ANNET: Fritekstfelt
+  ikkeGodkjentBegrunnelser:
+    UTSENDELSE_OVER_24_MND: Utsendelseperioden overskrider 24 md
+    TREDJELANDSBORGER_IKKE_AVTALELAND: Tredjelandsborger fra ikke avtaleland
+    ANNET: Fritekstfelt
   inngangsvilkaar:
     TREDJELANDSBORGER: null
     NORDISK_UTENFOR_EOS: null
@@ -192,10 +200,6 @@ forespoerseltyper:
   PURRING: null
   ENDRING: null
   FOERSTEGANG: null
-henleggelsesgrunner:
-  SOEKNADEN_TRUKKET: Søknaden er trukket
-  OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
-  ANNET: Fritekstfelt
 kontantytelser_eu_fo:
   FP: Foreldrepenger
   SP: Sykepenger
