@@ -23,6 +23,7 @@ behandlinger:
     HENLEGGELSE: Saken er henlagt
     ANMODNING_OM_UNNTAK: Anmodning om unntak
     IKKE_FASTSATT: Ikke fastsatt
+    REGISTRERT_UNNTAK: Om unntaksperioden har blitt godkjent for registrering
   behandlingsstatus:
     OPPRETTET: Behandlingen er opprettet
     UNDER_BEHANDLING: Behandlingen pågår
@@ -154,12 +155,15 @@ begrunnelser:
     BORESKIP: Boreskip - Sokkel
     FAST_INSTALLASJON: Fast installasjon
   unntak_periode_begrunnelser:
-    TREDJELANDSBORGER_IKKE_AVTALELAND: null
-    OVERLAPPENDE_MEDL_PERIODER: null
-    MOTTAR_YTELSER: null
-    PERIODEN_OVER_24_MD: null
-    FEIL_I_PERIODEN: null
-    PERIODE_FOR_GAMMEL: null
+    TREDJELANDSBORGER_IKKE_AVTALELAND: Personen er ikke EØS-borger
+    OVERLAPPENDE_MEDL_PERIODER: Det finnes overlappende periode i MEDL
+    MOTTAR_YTELSER: Personen mottar ytelser
+    PERIODEN_OVER_24_MD: Periodelengde er mer enn 24 måneder
+    FEIL_I_PERIODEN: Startdato er før sluttdato
+    PERIODE_FOR_GAMMEL: Periode mer enn 5 år tilbake i tid
+    PERIODE_LANGT_FREM_I_TID: Periode mer enn 1 år frem i tid
+    BOSATT_I_NORGE: Person er bosatt i Norge
+    INGEN_SLUTTDATO: Sluttdato mangler
 brev:
   produserbaredokumenter:
     AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
@@ -330,3 +334,6 @@ yrker:
 maritimtyper:
   SOKKEL: null
   SKIP: null
+utfallRegistreringUnntak:
+  GODKJENT: Godkjenn
+  IKKE_GODKJENT: Ikke godkjenn
