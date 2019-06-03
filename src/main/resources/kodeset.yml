@@ -164,6 +164,7 @@ begrunnelser:
     PERIODE_LANGT_FREM_I_TID: Periode mer enn 1 år frem i tid
     BOSATT_I_NORGE: Person er bosatt i Norge
     INGEN_SLUTTDATO: Sluttdato mangler
+    LOVVALGSLAND_NORGE: Norge er oppgitt som lovvalgsland
 brev:
   produserbaredokumenter:
     AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
