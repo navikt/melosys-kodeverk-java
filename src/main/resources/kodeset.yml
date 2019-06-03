@@ -164,6 +164,7 @@ begrunnelser:
     PERIODE_LANGT_FREM_I_TID: Periode mer enn 1 år frem i tid
     BOSATT_I_NORGE: Person er bosatt i Norge
     INGEN_SLUTTDATO: Sluttdato mangler
+    PERSON_DOD: Personen er død
     LOVVALGSLAND_NORGE: Norge er oppgitt som lovvalgsland
 brev:
   produserbaredokumenter:
