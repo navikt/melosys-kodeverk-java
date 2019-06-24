@@ -6,7 +6,7 @@
 
     <groupId>no.nav.melosys</groupId>
     <artifactId>melosys-internt-kodeverk</artifactId>
-    <version>1.2.18</version>
+    <version>1.2.19</version>
     <packaging>jar</packaging>
 
     <name>melosys-internt-kodeverk</name>

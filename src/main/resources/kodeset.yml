@@ -134,7 +134,7 @@ begrunnelser:
     OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
     ANNET: Fritekstfelt
   ikkeGodkjentBegrunnelser:
-    UTSENDELSE_OVER_24_MND: Utsendelseperioden overskrider 24 md
+    UTSENDELSE_OVER_24_MD: Utsendelseperioden overskrider 24 md
     TREDJELANDSBORGER_IKKE_AVTALELAND: Tredjelandsborger fra ikke avtaleland
     ANNET: Fritekstfelt
   inngangsvilkaar:
