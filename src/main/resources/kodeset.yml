@@ -1,3 +1,7 @@
+anmodningsperiodeSvarType:
+  INNVILGELSE: Innvilgelse
+  DELVIS_INNVILGELSE: Delvis innvilgelse
+  AVSLAG: Avslag
 aktoersroller:
   BRUKER: Bruker
   ARBEIDSGIVER: Arbeidsgiver
