@@ -23,6 +23,7 @@ avklartefaktatype:
 behandlinger:
   behandlingsresultattyper:
     FASTSATT_LOVVALGSLAND: Lovvalgsland er fastsatt
+    AVSLAG_MANGLENDE_OPPL: Avslått pga manglende opplysninger
     FORELOEPIG_FASTSATT_LOVVALGSLAND: Lovvalgsland er foreløpig fastsatt
     HENLEGGELSE: Saken er henlagt
     ANMODNING_OM_UNNTAK: Anmodning om unntak
