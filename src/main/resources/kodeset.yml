@@ -44,11 +44,13 @@ behandlinger:
     SOEKNAD: Søknad
     KLAGE: Klage
     ANKE: Anke
-    UNNTAK_FRA_MEDLEMSKAP: Registrering av unntak
-    NORGE_UTPEKT: Behandle at Norge er utpekt
-    PAASTAND_UTL: Behandle påstand fra utlandet
+    REGISTRERING_UNNTAK_NORSK_TRYGD: Registrering av unntak norsk trygd (A009,A010)
+    UTL_MYND_UTPEKT_NORGE: Norge er utpekt (A003)
+    UTL_MYND_UTPEKT_SEG_SELV: Utl. myndh. har utpekt seg selv (A003)
     NY_VURDERING: Behandle ny vurdering
     ENDRET_PERIODE: Behandle forkortet periode
+    ANMODNING_OM_UNNTAK_HOVEDREGEL: Behandling av en mottatt anmodning om unntak hovedregel (A001)
+    ØVRIGE_SED: Behandling av alle øvrige SED
 begrunnelser:
   arbeidsland:
     SKIP_INNENRIKS: Territorialfarvann
