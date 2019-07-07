@@ -176,6 +176,8 @@ begrunnelser:
 brev:
   produserbaredokumenter:
     AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
+    AVSLAG_YRKESAKTIV: Avslag eller orientering om anmodning om unntak
+    AVSLAG_MANGLENDE_OPPLYSNINGER: Avslag på manglende opplysninger
     MELDING_FORVENTET_SAKSBEHANDLINGSTID: Melding om forventet sakbehandlingstid
     MELDING_MANGLENDE_OPPLYSNINGER: Melding om manglende opplysninger
     MELDING_HENLAGT_SAK: Melding om henlagt sak
@@ -183,7 +185,6 @@ brev:
     INNVILGELSE_YRKESAKTIV: Innvilgelse yrkesaktiv
     ORIENTERING_ANMODNING_UNNTAK: Orienteringsbrev om anmodning unntak
     ANMODNING_UNNTAK: Anmodning om unntak
-    AVSLAG_YRKESAKTIV: Avslag eller orientering om anmodning om unntak
     INNVILGELSE_ARBEIDSGIVER: Innvilgelse Arbeidsgiver
 dokumenttitler:
   ARBF: Arbeidsforhold
