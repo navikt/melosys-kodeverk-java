@@ -30,7 +30,6 @@ public class KodeverkServiceIT extends AssertionValidator {
 
     @Test
     public void lagJavaClass_objectIkkeNull_generereJavaSourceFil() throws IOException {
-
         HashMap<String, Object> melosysInternKodeverkMap = kodeverkService.lesKodeverkStrukturFraYaml();
 
         assertNotNull(melosysInternKodeverkMap);
@@ -38,7 +37,6 @@ public class KodeverkServiceIT extends AssertionValidator {
 
     @Test
     public void lagSourceCode_sourceFilIkkeNull_skrivJavaSourceCode() throws IOException {
-
         kodeverkService.yamlTilJavaKildeFiler();
         File aktoerRoller = new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk/Aktoersroller.java");
         assertTrue(aktoerRoller.exists());
