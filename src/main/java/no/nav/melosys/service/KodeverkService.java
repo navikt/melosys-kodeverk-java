@@ -6,77 +6,84 @@ import java.util.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 @Component
 public class KodeverkService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(KodeverkService.class);
 
-    private static final String STANARD_TEMPLATE_MAPPE = "standard";
+    private static final String STANDARD_TEMPLATE_MAPPE = "standard";
 
     private final String internKodeverkYaml;
     private final String enumKildeKodeMappe;
-    private final FileService fileService;
     private final List<String> standardEnumFiler;
 
-    private final KildeCodeGeneratorService kildeCodeGeneratorService;
+    private final KildekodeGeneratorService kildekodeGeneratorService;
+    private static final String BASE_PACKAGE = "no.nav.melosys.domain.kodeverk";
 
     @Autowired
     public KodeverkService(@Value("${intern.kodeverk.yaml}") String internKodeverkYaml,
                            @Value("${enum.kilde.kode.mappe}") String enumKildeKodeMappe,
                            @Value("#{'${standard.enum.filer}'.split(',')}") List<String> standardEnumFiler,
-                           FileService fileService,
-                           KildeCodeGeneratorService kildeCodeGeneratorService) {
+                           KildekodeGeneratorService kildekodeGeneratorService) {
         this.internKodeverkYaml = internKodeverkYaml;
         this.enumKildeKodeMappe = enumKildeKodeMappe;
-        this.fileService = fileService;
         this.standardEnumFiler = standardEnumFiler;
-        this.kildeCodeGeneratorService = kildeCodeGeneratorService;
-    }
-
-    HashMap<String, Object> yamlTilMelosysInternKodeverkObject() throws IOException {
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return mapper.readValue(new String(fileService.lesFilTilByteArray(internKodeverkYaml)), HashMap.class);
+        this.kildekodeGeneratorService = kildekodeGeneratorService;
     }
 
     public void yamlTilJavaKildeFiler() throws IOException {
-        fileService.lagJavaPackageMapper(enumKildeKodeMappe);
-        kopiStandardJavaFiler();
-        HashMap<String, Object> melosysInternKodeverk = yamlTilMelosysInternKodeverkObject();
-        traverserHashMap("", melosysInternKodeverk, new HashSet<>());
+        opprettStandardFiler();
+        traverserStruktur(lesKodeverkStrukturFraYaml(), BASE_PACKAGE);
     }
 
-    void kopiStandardJavaFiler() {
-        fileService.kopiFilTilMappe(new File(STANARD_TEMPLATE_MAPPE, "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
-        standardEnumFiler.forEach(s -> fileService.kopiFilTilMappe(new File(STANARD_TEMPLATE_MAPPE, s), new File(enumKildeKodeMappe, s + ".java")));
+    void opprettStandardFiler() {
+        FileService.opprettMappe(filstiForJavaPakke(BASE_PACKAGE));
+        FileService.kopierFilTilMappe(new File(STANDARD_TEMPLATE_MAPPE, "pom.xml"), new File("melosys-kodeverk", "pom.xml"));
+        standardEnumFiler.forEach(s -> FileService.kopierFilTilMappe(new File(STANDARD_TEMPLATE_MAPPE, s), new File(filstiForJavaPakke(BASE_PACKAGE), s + ".java")));
     }
 
-    private void traverserHashMap(String classNavn, HashMap<String, Object> map, Set<String> seenKey) {
+    HashMap<String, Object> lesKodeverkStrukturFraYaml() throws IOException {
+        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+
+        return mapper.readValue(new String(FileService.lesFilTilByteArray(internKodeverkYaml)), HashMap.class);
+    }
+
+    private void traverserStruktur(HashMap<String, Object> map, String javaPakke) {
         map.forEach((key, value) -> {
-                if (value instanceof String || value == null ) {
-                    if (!seenKey.contains(classNavn)) {
-                        LOGGER.info("Generer java class for : {}", classNavn);
-                        objectTilJavaKildeKode(StringUtils.capitalize(classNavn), map);
-                        seenKey.add(classNavn);
-                    }
-                } else if (value instanceof HashMap) {
-                    traverserHashMap(key, (HashMap<String, Object>) value, seenKey);
+                if (erEnum(value)) {
+                    opprettJavaEnumKildekode(key, javaPakke, (List<Map<String, Object>>) value);
+                } else if (harUnderstruktur(value)) {
+                    traverserStruktur((HashMap<String, Object>) value, javaPakke + "." + key);
+                } else {
+                    throw new RuntimeException("Uventet type for key " + javaPakke + ":" + key + " med value " + value);
                 }
             }
         );
     }
 
-    private void objectTilJavaKildeKode(String classNavn, Map<String, Object> enumVerdier) {
-        File sourceFile = fileService.lagJavaKildeFil(enumKildeKodeMappe, classNavn);
-        String sourceCode = kildeCodeGeneratorService.genererEnumKildeKode(classNavn, enumVerdier);
-        fileService.skriveKildeKode(sourceFile, sourceCode);
-        LOGGER.info("Generer java class for : {} ", classNavn);
+    private void opprettJavaEnumKildekode(String enumNavn, String javaPakke, List<Map<String, Object>> enumVerdier) {
+        enumNavn = StringUtils.capitalize(enumNavn);
+        File sourceFile = FileService.opprettJavaKildeFil(filstiForJavaPakke(javaPakke), enumNavn);
+        String sourceCode = kildekodeGeneratorService.genererEnumKildeKode(enumNavn, javaPakke, enumVerdier);
+        FileService.skrivKildeKode(sourceFile, sourceCode);
+    }
 
+    private boolean harUnderstruktur(Object value) {
+        return value instanceof HashMap;
+    }
+
+    private boolean erEnum(Object value) {
+        return value instanceof List;
+    }
+
+    private String filstiForJavaPakke(String javaPakke) {
+        return enumKildeKodeMappe + javaPakke.replace(".", "/");
     }
 }
