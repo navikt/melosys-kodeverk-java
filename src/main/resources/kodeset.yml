@@ -1,351 +1,606 @@
-anmodningsperiodeSvarType:
-  INNVILGELSE: Innvilgelse
-  DELVIS_INNVILGELSE: Delvis innvilgelse
-  AVSLAG: Avslag
 aktoersroller:
-  BRUKER: Bruker
-  ARBEIDSGIVER: Arbeidsgiver
-  REPRESENTANT: Fullmektig
-  MYNDIGHET: Trygdemyndighet
-avklartefaktatype:
-  VIRKSOMHET: null
-  TIDLIGERE_LOVVALGSPERIODE: null
-  ARBEIDSLAND: null
-  ARBEID_SOKKEL_SKIP: null
-  YRKESGRUPPE: null
-  SOKKEL_ELLER_SKIP: null
-  BOSTEDSLAND: null
-  AARSAK_ENDRING_PERIODE: null
-  VURDERING_UNNTAK_PERIODE: null
-  MARGINALT_ARBEID: null
-  VESENTLIG_AKTIVITET_I_NORGE: null
-  ARBEIDSGIVERS_FORRETNINGSSTED: null
+  - kode: BRUKER
+    term: Bruker
+  - kode: ARBEIDSGIVER
+    term: Arbeidsgiver
+  - kode: REPRESENTANT
+    term: Fullmektig
+  - kode: MYNDIGHET
+    term: Trygdemyndighet
+avklartefakta:
+  - kode: VIRKSOMHET
+    term: null
+  - kode: TIDLIGERE_LOVVALGSPERIODE
+    term: null
+  - kode: ARBEIDSLAND
+    term: null
+  - kode: ARBEID_SOKKEL_SKIP
+    term: null
+  - kode: YRKESGRUPPE
+    term: null
+  - kode: BOSTEDSLAND
+    term: null
+  - kode: AARSAK_ENDRING_PERIODE
+    term: null
+  - kode: VURDERING_UNNTAK_PERIODE
+    term: null
 behandlinger:
-  behandlingsresultattyper:
-    FASTSATT_LOVVALGSLAND: Lovvalgsland er fastsatt
-    AVSLAG_MANGLENDE_OPPL: Avslått pga manglende opplysninger
-    FORELOEPIG_FASTSATT_LOVVALGSLAND: Lovvalgsland er foreløpig fastsatt
-    HENLEGGELSE: Saken er henlagt
-    ANMODNING_OM_UNNTAK: Anmodning om unntak
-    IKKE_FASTSATT: Ikke fastsatt
-    REGISTRERT_UNNTAK: Om unntaksperioden har blitt godkjent for registrering
-  behandlingsstatus:
-    OPPRETTET: Behandlingen er opprettet
-    UNDER_BEHANDLING: Behandlingen pågår
-    AVSLUTTET: Behandlingen er avsluttet
-    AVVENT_DOK_UTL: Avventer svar fra utenlandsk trygdemyndighet
-    AVVENT_DOK_PART: Avventer svar fra part i saken
-    ANMODNING_UNNTAK_SENDT: Anmodning om unntak er sendt
-    VURDER_DOKUMENT: Vurder dokument
-    TIDSFRIST_UTLOEPT: Tidsfristen er utløpt på etterspurte opplysninger
-    FORELOEPIG_LOVVALG: Avventer svar på foreløpig lovvalg
-    IVERKSETTER_VEDTAK: Vedtak iverksettes
-  behandlingstyper:
-    SOEKNAD: Søknad
-    KLAGE: Klage
-    ANKE: Anke
-    REGISTRERING_UNNTAK_NORSK_TRYGD: Registrering av unntak norsk trygd (A009,A010)
-    UTL_MYND_UTPEKT_NORGE: Norge er utpekt (A003)
-    UTL_MYND_UTPEKT_SEG_SELV: Utl. myndh. har utpekt seg selv (A003)
-    NY_VURDERING: Behandle ny vurdering
-    ENDRET_PERIODE: Behandle forkortet periode
-    ANMODNING_OM_UNNTAK_HOVEDREGEL: Behandling av en mottatt anmodning om unntak hovedregel (A001)
-    ØVRIGE_SED: Behandling av alle øvrige SED
+  resultattyper:
+    - kode: FASTSATT_LOVVALGSLAND
+      term: Lovvalgsland er fastsatt
+    - kode: FORELOEPIG_FASTSATT_LOVVALGSLAND
+      term: Lovvalgsland er foreløpig fastsatt
+    - kode: HENLEGGELSE
+      term: Saken er henlagt
+    - kode: ANMODNING_OM_UNNTAK
+      term: Anmodning om unntak
+    - kode: IKKE_FASTSATT
+      term: Ikke fastsatt
+    - kode: REGISTRERT_UNNTAK
+      term: Om unntaksperioden har blitt godkjent for registrering
+  status:
+    - kode: OPPRETTET
+      term: Behandlingen er opprettet
+    - kode: UNDER_BEHANDLING
+      term: Behandlingen pågår
+    - kode: AVSLUTTET
+      term: Behandlingen er avsluttet
+    - kode: AVVENT_DOK_UTL
+      term: Avventer svar fra utenlandsk trygdemyndighet
+    - kode: AVVENT_DOK_PART
+      term: Avventer svar fra part i saken
+    - kode: ANMODNING_UNNTAK_SENDT
+      term: Anmodning om unntak er sendt
+    - kode: VURDER_DOKUMENT
+      term: Vurder dokument
+    - kode: TIDSFRIST_UTLOEPT
+      term: Tidsfristen er utløpt på etterspurte opplysninger
+    - kode: FORELOEPIG_LOVVALG
+      term: Avventer svar på foreløpig lovvalg
+    - kode: IVERKSETTER_VEDTAK
+      term: Vedtak iverksettes
+  typer:
+    - kode: SOEKNAD
+      term: Søknad
+    - kode: KLAGE
+      term: Klage
+    - kode: ANKE
+      term: Anke
+    - kode: REGISTRERING_UNNTAK_NORSK_TRYGD
+      term: 'Registrering av unntak norsk trygd (A009,A010)'
+    - kode: UTL_MYND_UTPEKT_NORGE
+      term: Norge er utpekt (A003)
+    - kode: UTL_MYND_UTPEKT_SEG_SELV
+      term: Utl. myndh. har utpekt seg selv (A003)
+    - kode: NY_VURDERING
+      term: Behandle ny vurdering
+    - kode: ENDRET_PERIODE
+      term: Behandle forkortet periode
+    - kode: ANMODNING_OM_UNNTAK_HOVEDREGEL
+      term: Behandling av en mottatt anmodning om unntak hovedregel (A001)
+    - kode: ØVRIGE_SED
+      term: Behandling av alle øvrige SED
 begrunnelser:
   arbeidsland:
-    SKIP_INNENRIKS: Territorialfarvann
-    SKIPS_FLAGGLAND: Flaggland
-    BASELAND: Hjemmebaseland
-  art12_1_Begrunnelser:
-    UTSENDELSE_OVER_24_MN: Utsendelseperioden overskrider 24 måneder
-    ERSTATTER_ANNEN: Erstatter en annen utsendt person
-    IKKE_UTSENDT_PAA_OPPDRAG_FOR_AG: Ikke sendt ut for å utføre oppdrag for det norske foretaket
-    IKKE_OMFATTET_LENGE_NOK_I_NORGE_FOER: Ikke omfattet av norsk trygd 1 mn før utsendelse
-    UNDER_2_MN_SIDEN_FORRIGE_UTSENDING_TIL_SAMME_LAND: >-
-      Mindre enn 2 mn siden søker var utsendt for å utføre oppdrag i samme land
-      for samme foretak
-    IKKE_VESENTLIG_VIRKSOMHET: Foretaket har ikke vesentlig virksomhet
-  art12_2_Begrunnelser:
-    UTSENDELSE_OVER_24_MN: Utsendelseperioden overskrider 24 måneder
-    IKKE_LIGNENDE_VIRKSOMHET: Ikke lignende virksomhet
-    NORMALT_IKKE_DRIFT_NORGE: Normalt ikke drift i Norge
-  art12_1_Forutgaaende_Medl_Begrunnelse:
-    UNNTATT_MEDLEMSKAP: Unntak i MEDL
-    FOLKEREGISTRERT_IKKE_ARBEIDET_I_NORGE: 'Bor, men har arbeidet utenfor Norge'
-    IKKE_FOLKEREGISTRERT_ELLER_ARBEIDET_I_NORGE: Hverken bor eller arbeidet i Norge
-  art12_1_Vesentlig_Virksomhet_Begrunnelser:
-    KUN_ADMIN_ANSATTE: Kun administrativt ansatte i Norge
-    FOR_LITE_OMSETNING_NORGE: Mindre enn 25 % av totalomsetningen er opptjent i Norge
-    FOR_MANGE_ADMIN_ANSATTE: 'Mer enn 50 % av de ansatte som arbeider i Norge, er administrativt ansatte'
-    REKRUTTERER_ANSATTE_UTL: Ansatte rekrutteres hovedsakelig i utlandet
-    FOR_LITE_OPPDRAG_NORGE: Mindre enn 50 % av oppdragene uføres i Norge
-    FOR_LITE_KONTRAKTER_NORGE: Færre enn 50 % av kundekontraktene inngås i Norge
-    KONTRAKTER_IKKE_NORSK_LOV: Norsk rett gjelder ikke for kontraktene
-  art12_2_Normalt_Virksomhet_Begrunnelser:
-    IKKE_FORUTGAAENDE_DRIFT: Ikke tilstrekkelig forutgående drift
-    IKKE_GJENOPPTA_DRIFT: Kan ikke gjenoppta drift
-  art16_1_Anmodning_Begrunnelser:
-    UTSENDELSE_MELLOM_24_MN_OG_5_AAR: Utsendelseperioden er mellom 2 og 5 år
-    LOENNET_UTL_ENHET_I_KONSERN: Lønnes av utenlandsk foretak som er del av samme konsern
-    ERSTATTER_EN_ANNEN_UNDER_5_AAR: 'Erstatter en annen utsendt person, samlet periode mindre enn 5 år'
-    KORT_OPPDRAG_RETUR_NORSK_AG: >-
-      Ikke omfattet 1 mn før, men kun kortvarig oppdrag og skal returnere til
-      norsk arbeidsgiver
-    IDEELL_ORGANISASJON_IKKE_VESENTLIG_VIRK: Arbeider for ideell organisasjon som ikke har vesentlig virksomhet i Norge
-    KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV: 'Kortvarig oppdrag som selvstendig i utlandet, ikke-yrkesaktiv i Norge'
-    KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER: 'Kortvarig oppdrag som selvstendig i utlandet, arbeidstaker i Norge'
-    SAERLIG_GRUNN: Fritekstfelt
-  art16_1_Anmodning_Begrunnelser_Engelsk:
-    UTSENDELSE_MELLOM_24_MN_OG_5_AAR: Ongoing contract for a period longer than 2 and shorter than 5 years.
-    LOENNET_UTL_ENHET_I_KONSERN: >-
-      The person has a temporary employment contract within the same concern/conglomerate,
-      and will return to the Norwegian employer.
-    ERSTATTER_EN_ANNEN_UNDER_5_AAR: >-
-      The person is being posted to replace another posted worker,
-      and the aggregated posting period is shorter than 5 years.
-    KORT_OPPDRAG_RETUR_NORSK_AG: >-
-      The person has not been attached to the Norwegian social insurance system before posting,
-      but will return to the Norwegian employer after a brief posting.
-    IDEELL_ORGANISASJON_IKKE_VESENTLIG_VIRK: >-
-      Working for a non-profit organisation,
-      but the Norwegian organisation does not normally carry out its activity in Norway.
-    KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV: >-
-      Short-term assignment as self employed in your country.
-      Has not been performing any activity in Norway immediately prior to the assignment.
-    KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER: >-
-      Short-term assignment as self employed in your country.
-      Has not been performing self employed activity in Norway prior to the assignment.
-    SAERLIG_GRUNN: Fritekstfelt
-  art16_1_Avslag__Begrunnelser:
-    SOEKT_FOR_SENT: Søkt mer enn ett år etter perioden startet
-    OVER_5_AAR: Søkt om periode mer enn fem år
-    OVER_12_MD_UTL_ARBEIDSGIVER: 'Søkt om periode mer enn 12 md, har utenlandsk arbeidsgiver'
-    INGEN_SPESIELLE_FORHOLD: Ingen spesielle forhold
-    SAERLIG_AVSLAGSGRUNN: Særlig avslagsgrunn
-  art11_4_Begrunnelser:
-    SKIPETS_FLAGGLAND: Omfattet der skipet er registrert
-    AG_KONTOR_BOSTEDSLAND: Omfattet i bostedsland ved arbeid på skip
+    - kode: SKIP_INNENRIKS
+      term: Territorialfarvann
+    - kode: SKIPS_FLAGGLAND
+      term: Flaggland
+    - kode: BASELAND
+      term: Hjemmebaseland
+  art12_1_begrunnelser:
+    - kode: UTSENDELSE_OVER_24_MN
+      term: Utsendelseperioden overskrider 24 måneder
+    - kode: ERSTATTER_ANNEN
+      term: Erstatter en annen utsendt person
+    - kode: IKKE_UTSENDT_PAA_OPPDRAG_FOR_AG
+      term: Ikke sendt ut for å utføre oppdrag for det norske foretaket
+    - kode: IKKE_OMFATTET_LENGE_NOK_I_NORGE_FOER
+      term: Ikke omfattet av norsk trygd 1 md før utsendelse
+    - kode: UNDER_2_MN_SIDEN_FORRIGE_UTSENDING_TIL_SAMME_LAND
+      term: >-
+        Mindre enn 2 md siden søker var utsendt for å utføre oppdrag i samme
+        land for samme foretak
+    - kode: IKKE_VESENTLIG_VIRKSOMHET
+      term: Foretaket har ikke vesentlig virksomhet
+  art12_2_begrunnelser:
+    - kode: UTSENDELSE_OVER_24_MN
+      term: Utsendelseperioden overskrider 24 måneder
+    - kode: IKKE_LIGNENDE_VIRKSOMHET
+      term: Ikke lignende virksomhet
+    - kode: NORMALT_IKKE_DRIFT_NORGE
+      term: Normalt ikke drift i Norge
+  art12_1_forutgaaende_medl:
+    - kode: UNNTATT_MEDLEMSKAP
+      term: Unntak i MEDL
+    - kode: FOLKEREGISTRERT_IKKE_ARBEIDET_I_NORGE
+      term: 'Bor, men har arbeidet utenfor Norge'
+    - kode: IKKE_FOLKEREGISTRERT_ELLER_ARBEIDET_I_NORGE
+      term: Hverken bor eller arbeidet i Norge
+  art12_1_vesentlig_virksomhet:
+    - kode: KUN_ADMIN_ANSATTE
+      term: Kun administrativt ansatte i Norge
+    - kode: FOR_LITE_OMSETNING_NORGE
+      term: Mindre enn 25 % av totalomsetningen er opptjent i Norge
+    - kode: FOR_MANGE_ADMIN_ANSATTE
+      term: >-
+        Mer enn 50 % av de ansatte som arbeider i Norge, er administrativt
+        ansatte
+    - kode: REKRUTTERER_ANSATTE_UTL
+      term: Ansatte rekrutteres hovedsakelig i utlandet
+    - kode: FOR_LITE_OPPDRAG_NORGE
+      term: Mindre enn 50 % av oppdragene uføres i Norge
+    - kode: FOR_LITE_KONTRAKTER_NORGE
+      term: Færre enn 50 % av kundekontraktene inngås i Norge
+    - kode: KONTRAKTER_IKKE_NORSK_LOV
+      term: Norsk rett gjelder ikke for kontraktene
+  art12_2_normalt_virksomhet:
+    - kode: IKKE_FORUTGAAENDE_DRIFT
+      term: Ikke tilstrekkelig forutgående drift
+    - kode: IKKE_GJENOPPTA_DRIFT
+      term: Kan ikke gjenoppta drift
+  art16_1_anmodning:
+    - kode: UTSENDELSE_MELLOM_24_MN_OG_5_AAR
+      term: Utsendelseperioden er mellom 2 og 5 år
+    - kode: LOENNET_UTL_ENHET_I_KONSERN
+      term: Lønnes av utenlandsk foretak som er del av samme konsern
+    - kode: ERSTATTER_EN_ANNEN_UNDER_5_AAR
+      term: 'Erstatter en annen utsendt person, samlet periode mindre enn 5 år'
+    - kode: KORT_OPPDRAG_RETUR_NORSK_AG
+      term: >-
+        Ikke omfattet 1 md før, men kun kortvarig oppdrag og skal returnere til
+        norsk arbeidsgiver
+    - kode: IDEELL_ORGANISASJON_IKKE_VESENTLIG_VIRK
+      term: >-
+        Arbeider for ideell organisasjon som ikke har vesentlig virksomhet i
+        Norge
+    - kode: KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV
+      term: 'Kortvarig oppdrag som selvstendig i utlandet, ikke-yrkesaktiv i Norge'
+    - kode: KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER
+      term: 'Kortvarig oppdrag som selvstendig i utlandet, arbeidstaker i Norge'
+    - kode: SAERLIG_GRUNN
+      term: Fritekstfelt
+  art16_1_avslag:
+    - kode: SOEKT_FOR_SENT
+      term: Søkt mer enn ett år etter perioden startet
+    - kode: OVER_5_AAR
+      term: Søkt om periode mer enn fem år
+    - kode: OVER_12_MD_UTL_ARBEIDSGIVER
+      term: 'Søkt om periode mer enn 12 md, har utenlandsk arbeidsgiver'
+    - kode: INGEN_SPESIELLE_FORHOLD
+      term: Ingen spesielle forhold
+    - kode: SAERLIG_AVSLAGSGRUNN
+      term: Særlig avslagsgrunn
+  art11_4_begrunnelser:
+    - kode: SKIPETS_FLAGGLAND
+      term: Omfattet der skipet er registrert
+    - kode: AG_KONTOR_BOSTEDSLAND
+      term: Omfattet i bostedsland ved arbeid på skip
   bosted:
-    OPPHOLD_MER_ENN_12_MND: Oppholdet er mer enn 12 måneder.
-    HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE: Har ikke forutgående bosted i Norge.
-    IKKE_INTENSJON_OM_RETUR: Har ikke intensjon om retur til Norge.
-    FAMILIE_BOR_IKKE_I_NORGE: Familie bor ikke i Norge.
-    STUDIER_FINANSIERES_IKKE_FRA_NORGE: Studier finansieres ikke fra Norge.
-    HAR_IKKE_STUDIESTED_I_UTLANDET: Har ikke studiested i utlandet.
-  endretperioder:
-    RETURNERT_NORGE: Arbeidstakeren har returnert til Norge
-    ARBEIDSFORHOLD_AVSLUTTET: Arbeidsforholdet med utsendende arbeidsgiver er avsluttet
-    ENDRINGER_ARBEIDSSITUASJON: Endringer i arbeidssituasjonen
+    - kode: OPPHOLD_MER_ENN_12_MND
+      term: Oppholdet er mer enn 12 måneder.
+    - kode: HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE
+      term: Har ikke forutgående bosted i Norge.
+    - kode: IKKE_INTENSJON_OM_RETUR
+      term: Har ikke intensjon om retur til Norge.
+    - kode: FAMILIE_BOR_IKKE_I_NORGE
+      term: Familie bor ikke i Norge.
+    - kode: STUDIER_FINANSIERES_IKKE_FRA_NORGE
+      term: Studier finansieres ikke fra Norge.
+    - kode: HAR_IKKE_STUDIESTED_I_UTLANDET
+      term: Har ikke studiested i utlandet.
+  endretperiode:
+    - kode: RETURNERT_NORGE
+      term: Arbeidstakeren har returnert til Norge
+    - kode: ARBEIDSFORHOLD_AVSLUTTET
+      term: Arbeidsforholdet med utsendende arbeidsgiver er avsluttet
+    - kode: ENDRINGER_ARBEIDSSITUASJON
+      term: Endringer i arbeidssituasjonen
+  fartsomrader:
+    - kode: INNENRIKS
+      term: Innenfor territorialfarvann
+    - kode: UTENRIKS
+      term: Til sjøs
+  forutgaendemedlemskap:
+    - kode: IKKE_LOENNET_UTSEND_AG
+      term: >-
+        Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge
+        forutgående måned.
+    - kode: IKKE_LOENNET_NORGE
+      term: >-
+        Mottok IKKE lønn fra annen arbeidsgiver opptjent i Norge forutgående
+        måned.
+    - kode: MOTTAT_LOENN_UTL
+      term: Mottok lønn opptjent i annet land forutgående måned.
+    - kode: IKKE_FOLKEREGISTRERT_NORGE
+      term: Har ikke TPS-adresse i Norge.
+    - kode: IKKE_ANSATT_UTSEND_AG
+      term: Er IKKE registrert i Aa-registeret hos utsendende arbeidsgiver.
   henleggelsesgrunner:
-    SOEKNADEN_TRUKKET: Søknaden er trukket
-    OPPHOLD_UTL_AVLYST: Utenlandsoppholdet er avlyst
-    ANNET: Fritekstfelt
-  ikkeGodkjentBegrunnelser:
-    UTSENDELSE_OVER_24_MD: Utsendelseperioden overskrider 24 md
-    TREDJELANDSBORGER_IKKE_AVTALELAND: Tredjelandsborger fra ikke avtaleland
-    ANNET: Fritekstfelt
+    - kode: SOEKNADEN_TRUKKET
+      term: Søknaden er trukket
+    - kode: OPPHOLD_UTL_AVLYST
+      term: Utenlandsoppholdet er avlyst
+    - kode: ANNET
+      term: Fritekstfelt
+  ikkeskip:
+    - kode: IKKE_EGET_FREMDRIFT
+      term: Ikke eget fremdrift
+    - kode: IKKE_ORDINAERT_SKIPSFART
+      term: Ikke ordinært skipsfart
+  ikke_godkjent_begrunnelser:
+    - kode: UTSENDELSE_OVER_24_MD
+      term: Utsendelseperioden overskrider 24 md
+    - kode: TREDJELANDSBORGER_IKKE_AVTALELAND
+      term: Tredjelandsborger fra en ikke avtaleland
+    - kode: ANNET
+      term: Fritekstfelt
   inngangsvilkaar:
-    TREDJELANDSBORGER: null
-    NORDISK_UTENFOR_EOS: null
-    EOS_BORGER: null
+    - kode: TREDJELANDSBORGER
+      term: null
+    - kode: NORDISK_UTENFOR_EOS
+      term: null
+    - kode: EOS_BORGER
+      term: null
   opphold:
-    FEIL_LAND_JOURNALFOERING: null
-    UGYLDIG_TERRITORIUM: null
-    NYE_OPPLYSNINGER_LAND: null
+    - kode: FEIL_LAND_JOURNALFOERING
+      term: Feil land oppgitt i journalføringen
+    - kode: NYE_OPPLYSNINGER_LAND
+      term: Nye opplysninger om arbeids-/oppholdsland
   normaltdrivervirksomhet:
-    IKKE_FORUTGAAENDE_DRIFT: Ikke tilstrekkelig forutgående drift
-    HAR_IKKE_NØDVENDIG_INFRASTRUKTUR: Ikke nødvendig utstyr eller fasiliteter
-    OPPRETTHOLDER_IKKE_LISENSER_AUTORISASJON: Opprettholder ikke nødvendige lisenser eller autorisasjoner
-  sokkel_Begrunnelser:
-    IKKE_EGEN_FREMDRIFT: Ikke framdrift for egen maskin
-    IKKE_ORDINAER_SKIPSFART: Skrogtypen kan ikke brukes i ordinær skipsfart
-    BORESKIP: Boreskip - Sokkel
-    FAST_INSTALLASJON: Fast installasjon
+    - kode: IKKE_FORUTGAAENDE_DRIFT
+      term: Ikke tilstrekkelig forutgående drift
+    - kode: HAR_IKKE_NØDVENDIG_INFRASTRUKTUR
+      term: Ikke nødvendig utstyr eller fasiliteter
+    - kode: OPPRETTHOLDER_IKKE_LISENSER_AUTORISASJON
+      term: Opprettholder ikke nødvendige lisenser eller autorisasjoner
+  sokkel:
+    - kode: FAST_INSTALLASJON
+      term: Fast installasjon
+    - kode: IKKE_EGEN_FREMDRIFT
+      term: Ikke framdrift for egen maskin
+    - kode: IKKE_ORDINAER_SKIPSFART
+      term: Skrogtypen kan ikke brukes i ordinær skipsfart
+    - kode: BORESKIP
+      term: Boreskip - Sokkel
   unntak_periode_begrunnelser:
-    TREDJELANDSBORGER_IKKE_AVTALELAND: Personen er ikke EØS-borger
-    OVERLAPPENDE_MEDL_PERIODER: Det finnes overlappende periode i MEDL
-    MOTTAR_YTELSER: Personen mottar ytelser
-    PERIODEN_OVER_24_MD: Periodelengde er mer enn 24 måneder
-    FEIL_I_PERIODEN: Startdato er før sluttdato
-    PERIODE_FOR_GAMMEL: Periode mer enn 5 år tilbake i tid
-    PERIODE_LANGT_FREM_I_TID: Periode mer enn 1 år frem i tid
-    BOSATT_I_NORGE: Person er bosatt i Norge
-    INGEN_SLUTTDATO: Sluttdato mangler
-    PERSON_DOD: Personen er død
-    LOVVALGSLAND_NORGE: Norge er oppgitt som lovvalgsland
+    - kode: TREDJELANDSBORGER_IKKE_AVTALELAND
+      term: Personen er ikke EØS-borger
+    - kode: OVERLAPPENDE_MEDL_PERIODER
+      term: Det finnes overlappende periode i MEDL
+    - kode: MOTTAR_YTELSER
+      term: Personen mottar ytelser
+    - kode: PERIODEN_OVER_24_MD
+      term: Periodelengde er mer enn 24 måneder
+    - kode: FEIL_I_PERIODEN
+      term: Startdato er før sluttdato
+    - kode: PERIODE_FOR_GAMMEL
+      term: Periode mer enn 5 år tilbake i tid
+    - kode: PERIODE_LANGT_FREM_I_TID
+      term: Periode mer enn 1 år frem i tid
+    - kode: BOSATT_I_NORGE
+      term: Person er bosatt i Norge
+    - kode: INGEN_SLUTTDATO
+      term: Sluttdato mangler
+    - kode: PERSON_DOD
+      term: Personen er død
+    - kode: LOVVALGSLAND_NORGE
+      term: Norge er oppgitt som lovvalgsland
 brev:
   produserbaredokumenter:
-    AVSLAG_ARBEIDSGIVER: Avslag arbeidsgiver
-    AVSLAG_YRKESAKTIV: Avslag eller orientering om anmodning om unntak
-    AVSLAG_MANGLENDE_OPPLYSNINGER: Avslag på manglende opplysninger
-    MELDING_FORVENTET_SAKSBEHANDLINGSTID: Melding om forventet sakbehandlingstid
-    MELDING_MANGLENDE_OPPLYSNINGER: Melding om manglende opplysninger
-    MELDING_HENLAGT_SAK: Melding om henlagt sak
-    ATTEST_A1: Attest A1
-    INNVILGELSE_YRKESAKTIV: Innvilgelse yrkesaktiv
-    ORIENTERING_ANMODNING_UNNTAK: Orienteringsbrev om anmodning unntak
-    ANMODNING_UNNTAK: Anmodning om unntak
-    INNVILGELSE_ARBEIDSGIVER: Innvilgelse Arbeidsgiver
+    - kode: INNVILGELSE_YRKESAKTIV
+      term: Innvilgelse yrkesaktiv
+    - kode: MELDING_FORVENTET_SAKSBEHANDLINGSTID
+      term: Melding om forventet sakbehandlingstid
+    - kode: ORIENTERING_ANMODNING_UNNTAK
+      term: Orienteringsbrev om anmodning unntak
+    - kode: MELDING_MANGLENDE_OPPLYSNINGER
+      term: Melding om manglende opplysninger
+    - kode: MELDING_HENLAGT_SAK
+      term: Melding om henlagt sak
+    - kode: ATTEST_A1
+      term: Attest A1
+    - kode: AVSLAG_YRKESAKTIV
+      term: Avslag eller orientering om anmodning om unntak
+    - kode: ANMODNING_UNNTAK
+      term: Anmodning om unntak
+    - kode: INNVILGELSE_ARBEIDSGIVER
+      term: Innvilgelse Arbeidsgiver
+    - kode: AVSLAG_ARBEIDSGIVER
+      term: Avslag Arbeidsgiver
 dokumenttitler:
-  ARBF: Arbeidsforhold
-  BKR_MEDL: Bekreftelse på medlemskap i folketrygden
-  INNT_SKAT: Inntektsopplysninger
-  MERK: Merknad til sak
-  STUDIE_DOKUMENTASJON: Studiedokumentasjon
-  SOK_MED: Søknad om medlemskap
-  BEKR_UNNT_FRA_MEDL: Unntak
-  ANNET: Annet (=fritekst)
+  - kode: ARBF
+    term: Arbeidsforhold
+  - kode: BKR_MEDL
+    term: Bekreftelse på medlemskap i folketrygden
+  - kode: INNT_SKAT
+    term: Inntektsopplysninger
+  - kode: MERK
+    term: Merknad til sak
+  - kode: STUDIE_DOKUMENTASJON
+    term: Studiedokumentasjon
+  - kode: SOK_MED
+    term: Søknad om medlemskap
+  - kode: BEKR_UNNT_FRA_MEDL
+    term: Unntak
+  - kode: ANNET
+    term: Annet (=fritekst)
 dokumenttyper:
-  SOEKNAD_AVKL_LOV: null
-  SOEKNAD_OVERS_UTLMYNDH: null
-  UTPEK_NO_UTLMYNDH: null
-  PAASTAND_UTLMYNDH: null
-  MELDING_AKTOER: null
-  KLAGE: Klage
-  ANKE: Anke
-  PSTING_UTLMYNDH: null
-  KLAGEVEDTAK: Klagevedtak
-  KJENNELSE_TRYGDERETTEN: Trygderettskjennelse
+  - kode: SOEKNAD_AVKL_LOV
+    term: null
+  - kode: SOEKNAD_OVERS_UTLMYNDH
+    term: null
+  - kode: UTPEK_NO_UTLMYNDH
+    term: null
+  - kode: PAASTAND_UTLMYNDH
+    term: null
+  - kode: MELDING_AKTOER
+    term: null
+  - kode: KLAGE
+    term: Klage
+  - kode: ANKE
+    term: Anke
+  - kode: PSTING_UTLMYNDH
+    term: null
+  - kode: KLAGEVEDTAK
+    term: Klagevedtak
+  - kode: KJENNELSE_TRYGDERETTEN
+    term: Trygderettskjennelse
 finansiering:
-  LAANEKASSEN: Lånekassen
-  UTENLANDSK_INSTITUSJON: Utenlandsk institusjon
-  EGNE_MIDLER: Egne midler / arv / etc
+  - kode: LAANEKASSEN
+    term: Lånekassen
+  - kode: UTENLANDSK_INSTITUSJON
+    term: Utenlandsk institusjon
+  - kode: EGNE_MIDLER
+    term: Egne midler / arv / etc
+folketrygdloven:
+  begrunnelser:
+    endret_unntaksperiode:
+      - kode: PERIODE_FEILREGISTRERT
+        term: Periode er feilregistrert
+      - kode: AAPEN_SLUTTDATO
+        term: Åpen sluttdato
+      - kode: ANNET
+        term: Annet
 forespoerseltyper:
-  PURRING: null
-  ENDRING: null
-  FOERSTEGANG: null
+  - kode: PURRING
+    term: null
+  - kode: ENDRING
+    term: null
+  - kode: FOERSTEGANG
+    term: null
 kontantytelser_eu_fo:
-  FP: Foreldrepenger
-  SP: Sykepenger
-  AAP: Arbeidsavklaringspenger
-  DP: Dagpenger
+  - kode: FP
+    term: Foreldrepenger
+  - kode: SP
+    term: Sykepenger
+  - kode: AAP
+    term: Arbeidsavklaringspenger
+  - kode: DP
+    term: Dagpenger
 landkoder:
-  CH: Sveits
-  BE: Belgia
-  BG: Bulgaria
-  CZ: Tsjekkia
-  DK: Danmark
-  EE: Estland
-  FI: Finland
-  FO: Færøyene
-  FR: Frankrike
-  GL: Grønland
-  GR: Hellas
-  IE: Irland
-  IS: Island
-  IT: Italia
-  HR: Kroatia
-  CY: Kypros
-  LV: Latvia
-  LI: Liechtenstein
-  LT: Litauen
-  LU: Luxembourg
-  MT: Malta
-  NL: Nederland
-  NO: Norge
-  PL: Polen
-  PT: Portugal
-  RO: Romania
-  SK: Slovakia
-  SI: Slovenia
-  ES: Spania
-  GB: Storbritannia
-  SE: Sverige
-  DE: Tyskland
-  HU: Ungarn
-  AT: Østerrike
-  AX: Åland
-  SJ: Svalbard og Jan Mayen
+  - kode: CH
+    term: Sveits
+  - kode: BE
+    term: Belgia
+  - kode: BG
+    term: Bulgaria
+  - kode: DK
+    term: Danmark
+  - kode: EE
+    term: Estland
+  - kode: FI
+    term: Finland
+  - kode: FR
+    term: Frankrike
+  - kode: GR
+    term: Hellas
+  - kode: IE
+    term: Irland
+  - kode: IS
+    term: Island
+  - kode: IT
+    term: Italia
+  - kode: HR
+    term: Kroatia
+  - kode: CY
+    term: Kypros
+  - kode: LV
+    term: Latvia
+  - kode: LI
+    term: Liechtenstein
+  - kode: LT
+    term: Litauen
+  - kode: LU
+    term: Luxembourg
+  - kode: MT
+    term: Malta
+  - kode: NL
+    term: Nederland
+  - kode: 'NO'
+    term: Norge
+  - kode: PL
+    term: Polen
+  - kode: PT
+    term: Portugal
+  - kode: RO
+    term: Romania
+  - kode: SK
+    term: Slovakia
+  - kode: SI
+    term: Slovenia
+  - kode: ES
+    term: Spania
+  - kode: GB
+    term: Storbritannia
+  - kode: SE
+    term: Sverige
+  - kode: DE
+    term: Tyskland
+  - kode: HU
+    term: Ungarn
+  - kode: AT
+    term: Østerrike
+  - kode: CZ
+    term: Tsjekkia
 lovvalgsbestemmelser:
-  lovvalgsBestemmelser_883_2004:
-    FO_883_2004_ART11_1: Fo 883/2004 Artikkel 11 nr. 1
-    FO_883_2004_ART11_3A: Fo 883/2004 Artikkel 11 nr. 3 bokstav a
-    FO_883_2004_ART11_3B: Fo 883/2004 Artikkel 11 nr. 3 bokstav b
-    FO_883_2004_ART11_3C: Fo 883/2004 Artikkel 11 nr. 3 bokstav c
-    FO_883_2004_ART11_3E: Fo 883/2004 Artikkel 11 nr. 3 bokstav e
-    FO_883_2004_ART11_4_2: Fo 883/2004 Artikkel 11 nr. 4 andre punktum
-    FO_883_2004_ART12_1: Fo 883/2004 Artikkel 12 nr. 1
-    FO_883_2004_ART12_2: Fo 883/2004 Artikkel 12 nr. 2
-    FO_883_2004_ART13_1A: Fo 883/2004 Artikkel 13 nr. 1 bokstav a
-    FO_883_2004_ART13_1B1: Fo 883/2004 Artikkel 13 nr. 1 bokstav b i)
-    FO_883_2004_ART13_1_B2: Fo 883/2004 Artikkel 13 nr. 1 bokstav b ii)
-    FO_883_2004_ART13_1_B3: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iii)
-    FO_883_2004_ART13_1_B4: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iv)
-    FO_883_2004_ART13_2A: Fo 883/2004 Artikkel 13 nr. 2 bokstav a
-    FO_883_2004_ART13_2B: Fo 883/2004 Artikkel 13 nr. 2 bokstav b
-    FO_883_2004_ART13_3: Fo 883/2004 Artikkel 13 nr. 3
-    FO_883_2004_ART13_4: Fo 883/2004 Artikkel 13 nr. 4
-    FO_883_2004_ART16_1: Fo 883/2004 Artikkel 16 nr. 1
-    FO_883_2004_ART16_2: Fo 883/2004 Artikkel 16 nr. 2
-    FO_883_2004_ANNET: FO_883_2004_ANNET
-  LovvalgsBestemmelser_987_2009:
-    FO_987_2009_ART14_11: Fo 987/2009 Artikkel 14 nr. 11
-  TilleggsBestemmelser_883_2004:
-    FO_883_2004_ART11_2: Fo 883/2004 Artikkel 11 nr. 2
-    FO_883_2004_ART11_4_1: Fo 883/2004 Artikkel 11 nr. 4 første punktum
-    FO_883_2004_ART11_5: Fo 883/2004 Artikkel 11 nr. 5
-    FO_883_2004_ART13_4: Fo 883/2004 Artikkel 13 nr. 4
-    FO_883_2004_ART87_7: Fo 883/2004 Artikkel 87 nr. 7
-    FO_883_2004_ART87A: Fo 883/2004 Artikkel 87a
+  forordning_883_2004:
+    - kode: FO_883_2004_ART11_1
+      term: Fo 883/2004 Artikkel 11 nr. 1
+    - kode: FO_883_2004_ART11_3A
+      term: Fo 883/2004 Artikkel 11 nr. 3 bokstav a
+    - kode: FO_883_2004_ART11_3B
+      term: Fo 883/2004 Artikkel 11 nr. 3 bokstav b
+    - kode: FO_883_2004_ART11_3C
+      term: Fo 883/2004 Artikkel 11 nr. 3 bokstav c
+    - kode: FO_883_2004_ART11_3E
+      term: Fo 883/2004 Artikkel 11 nr. 3 bokstav e
+    - kode: FO_883_2004_ART11_4_2
+      term: Fo 883/2004 Artikkel 11 nr. 4 andre punktum
+    - kode: FO_883_2004_ART12_1
+      term: Fo 883/2004 Artikkel 12 nr. 1
+    - kode: FO_883_2004_ART12_2
+      term: Fo 883/2004 Artikkel 12 nr. 2
+    - kode: FO_883_2004_ART13_1A
+      term: Fo 883/2004 Artikkel 13 nr. 1 bokstav a
+    - kode: FO_883_2004_ART13_1B1
+      term: Fo 883/2004 Artikkel 13 nr. 1 bokstav b i)
+    - kode: FO_883_2004_ART13_1_B2
+      term: Fo 883/2004 Artikkel 13 nr. 1 bokstav b ii)
+    - kode: FO_883_2004_ART13_1_B3
+      term: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iii)
+    - kode: FO_883_2004_ART13_1_B4
+      term: Fo 883/2004 Artikkel 13 nr. 1 bokstav b iv)
+    - kode: FO_883_2004_ART13_2A
+      term: Fo 883/2004 Artikkel 13 nr. 2 bokstav a
+    - kode: FO_883_2004_ART13_2B
+      term: Fo 883/2004 Artikkel 13 nr. 2 bokstav b
+    - kode: FO_883_2004_ART13_3
+      term: Fo 883/2004 Artikkel 13 nr. 3
+    - kode: FO_883_2004_ART13_4
+      term: Fo 883/2004 Artikkel 13 nr. 4
+    - kode: FO_883_2004_ART16_1
+      term: Fo 883/2004 Artikkel 16 nr. 1
+    - kode: FO_883_2004_ART16_2
+      term: Fo 883/2004 Artikkel 16 nr. 2
+    - kode: FO_883_2004_ANNET
+      term: null
+  forordning_987_2009:
+    - kode: FO_987_2009_ART14_11
+      term: Fo 987/2009 Artikkel 14 nr. 11
+  tillegg:
+    - kode: FO_883_2004_ART11_2
+      term: Fo 883/2004 Artikkel 11 nr. 2
+    - kode: FO_883_2004_ART11_4_1
+      term: Fo 883/2004 Artikkel 11 nr. 4 første punktum
+    - kode: FO_883_2004_ART11_5
+      term: Fo 883/2004 Artikkel 11 nr. 5
+    - kode: FO_883_2004_ART13_4
+      term: Fo 883/2004 Artikkel 13 nr. 4
+    - kode: FO_883_2004_ART87_7
+      term: Fo 883/2004 Artikkel 87 nr. 7
+    - kode: FO_883_2004_ART87A
+      term: Fo 883/2004 Artikkel 87a
 medlemskapstyper:
-  PLIKTIG: Pliktig medlemskap
-  FRIVILLIG: Frivillig medlemskap
-  UNNTATT: Unntatt medlemskap
+  - kode: PLIKTIG
+    term: Pliktig medlemskap
+  - kode: FRIVILLIG
+    term: Frivillig medlemskap
+  - kode: UNNTATT
+    term: Unntatt medlemskap
 mottaksretning:
-  INN: Inngående dokument
-  UT: Utgående dokument
-  NOTAT: Internt notat
+  - kode: INN
+    term: Inngående dokument
+  - kode: UT
+    term: Utgående dokument
+  - kode: NOTAT
+    term: Internt notat
 oppgavetyper:
-  BEH_SAK_MK: Behandle sak (Manuell)
-  JFR: Journalføring
-  VUR: Vurder dokument
+  - kode: BEH_SAK_MK
+    term: Behandle sak (Manuell)
+  - kode: JFR
+    term: Journalføring
 representerer:
-  BRUKER: Representerer bruker
-  ARBEIDSGIVER: Representerer arbeidsgiver
-  BEGGE: Representerer bruker og arbeidsgiver
+  - kode: BRUKER
+    term: Representerer bruker
+  - kode: ARBEIDSGIVER
+    term: Representerer arbeidsgiver
+  - kode: BEGGE
+    term: Representerer bruker og arbeidsgiver
 saksstatuser:
-  OPPRETTET: Saken er opprettet
-  LOVVALG_AVKLART: Lovvalget er avklart
-  AVSLUTTET: Saken er avsluttet
-  HENLAGT: Saken er henlagt
-  HENLAGT_BORTFALT: Saken er henlagt som bortfalt i Melosys
+  - kode: OPPRETTET
+    term: Saken er opprettet
+  - kode: LOVVALG_AVKLART
+    term: Lovvalget er avklart
+  - kode: AVSLUTTET
+    term: Saken er avsluttet
+  - kode: HENLAGT
+    term: Saken er henlagt
+  - kode: HENLAGT_BORTFALT
+    term: Saken er henlagt som bortfalt i Melosys.
 sakstyper:
-  EU_EOS: EU/EØS
-  TRYGDEAVTALE: Trygdeavtale
-  FTRL: Folketrygdloven
+  - kode: EU_EOS
+    term: EU/EØS
+  - kode: TRYGDEAVTALE
+    term: Trygdeavtale
+  - kode: FTRL
+    term: Folketrygdloven
 trygdedekninger:
-  UTEN_DEKNING: Uten dekning
-  FULL_DEKNING_EOSFO: null
+  - kode: UTEN_DEKNING
+    term: Uten dekning
+  - kode: FULL_DEKNING_EOSFO
+    term: null
+utfallregistreringunntak:
+  - kode: GODKJENT
+    term: Godkjenn
+  - kode: IKKE_GODKJENT
+    term: Ikke godkjenn
 vedleggstitler:
-  TITTEL_1: Vedleggstittel 1
-  TITTEL_2: Vedleggstittel 2
-  ANNET: Annet...
+  - kode: TITTEL_1
+    term: Vedleggstittel 1
+  - kode: TITTEL_2
+    term: Vedleggstittel 2
+  - kode: ANNET
+    term: Annet...
 vilkaar:
-  FO_883_2004_INNGANGSVILKAAR: null
-  FO_883_2004_ART12_1: null
-  FO_883_2004_ART12_2: null
-  FO_883_2004_ART16_1: null
-  FO_883_2004_ART11_3A: null
-  FO_883_2004_ART11_4_1: null
-  FO_883_2004_ART11_4_2: null
-  ART12_1_VESENTLIG_VIRKSOMHET: null
-  ART12_1_FORUTGAAENDE_MEDLEMSKAP: null
-  ART12_2_NORMALT_DRIVER_VIRKSOMHET: null
-  FO_883_2004_ART87A: null
-  BOSATT_I_NORGE: null
-  FTRL_2_12_UNNTAK_TURISTSKIP: null
+  - kode: FO_883_2004_INNGANGSVILKAAR
+    term: null
+  - kode: FO_883_2004_ART12_1
+    term: null
+  - kode: FO_883_2004_ART12_2
+    term: null
+  - kode: FO_883_2004_ART16_1
+    term: null
+  - kode: ART12_1_VESENTLIG_VIRKSOMHET
+    term: null
+  - kode: ART12_1_FORUTGAAENDE_MEDLEMSKAP
+    term: null
+  - kode: ART12_2_NORMALT_DRIVER_VIRKSOMHET
+    term: null
+  - kode: FO_883_2004_ART87A
+    term: null
+  - kode: BOSATT_I_NORGE
+    term: null
+  - kode: FTRL_2_12_UNNTAK_TURISTSKIP
+    term: null
+  - kode: FO_883_2004_ART11_3A
+    term: null
+  - kode: FO_883_2004_ART11_4_1
+    term: null
+  - kode: FO_883_2004_ART11_4_2
+    term: null
 yrker:
   yrkesaktivitetstyper:
-    LOENNET_ARBEID: Er i lønnet arbeid.
-    FRILANSER: Arbeider som frilanser hos en norsk arbeidsgiver.
-    SELVSTENDIG: Arbeider som selvstendig næringsdrivende.
+    - kode: LOENNET_ARBEID
+      term: Er i lønnet arbeid.
+    - kode: FRILANSER
+      term: Arbeider som frilanser hos en norsk arbeidsgiver.
+    - kode: SELVSTENDIG
+      term: Arbeider som selvstendig næringsdrivende.
   yrkesgrupper:
-    SOKKEL_ELLER_SKIP: null
-    FLYENDE_PERSONELL: null
-    ORDINAER: null
-maritimtyper:
-  SOKKEL: null
-  SKIP: null
-utfallRegistreringUnntak:
-  GODKJENT: Godkjenn
-  IKKE_GODKJENT: Ikke godkjenn
+    - kode: SOKKEL_ELLER_SKIP
+      term: null
+    - kode: FLYENDE_PERSONELL
+      term: null
+    - kode: ORDINAER
+      term: null

@@ -2,7 +2,6 @@ package no.nav.melosys.service;
 
 import java.io.File;
 
-import no.nav.melosys.service.FileService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ public class FileServiceIT {
 
     @Test
     public void lagJavaPackageMapper_forGittSti_mappenErOpprettet() throws Exception {
-        fileService.lagJavaPackageMapper("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk");
+        fileService.opprettMappe("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk");
         assertTrue(new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk").exists());
     }
 

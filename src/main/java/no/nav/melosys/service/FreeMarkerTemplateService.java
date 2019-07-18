@@ -19,17 +19,16 @@ public class FreeMarkerTemplateService {
 
     public FreeMarkerTemplateService(@Value("${template.mappe}") String templateMappe) {
         cfg = new Configuration(Configuration.VERSION_2_3_27);
-        cfg.setClassForTemplateLoading(this.getClass(), templateMappe);
+        cfg.setClassForTemplateLoading(getClass(), templateMappe);
     }
 
     String generereKildeKodeFraTemplate(Map root, String templateNavn) throws IOException, TemplateException {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
-            Template temp = cfg.getTemplate(templateNavn);
-            Writer out = new OutputStreamWriter(byteArrayOutputStream);
-            temp.process(root, out);
-            return new String(byteArrayOutputStream.toByteArray());
-
+        Template temp = cfg.getTemplate(templateNavn);
+        Writer out = new OutputStreamWriter(byteArrayOutputStream);
+        temp.process(root, out);
+        return new String(byteArrayOutputStream.toByteArray());
     }
 
     Configuration getCfg() {

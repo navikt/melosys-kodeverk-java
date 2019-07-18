@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @EnableAutoConfiguration(exclude = {WebMvcAutoConfiguration.class})
-@ContextConfiguration(classes = {KodeverkService.class, FileService.class, KildeCodeGeneratorService.class, FreeMarkerTemplateService.class})
+@ContextConfiguration(classes = {KodeverkService.class, FileService.class, KildekodeGeneratorService.class, FreeMarkerTemplateService.class})
 @PropertySource("classpath:application.properties")
 
 public class KodeverkServiceIT extends AssertionValidator {
@@ -31,7 +31,7 @@ public class KodeverkServiceIT extends AssertionValidator {
     @Test
     public void lagJavaClass_objectIkkeNull_generereJavaSourceFil() throws IOException {
 
-        HashMap<String, Object> melosysInternKodeverkMap = kodeverkService.yamlTilMelosysInternKodeverkObject();
+        HashMap<String, Object> melosysInternKodeverkMap = kodeverkService.lesKodeverkStrukturFraYaml();
 
         assertNotNull(melosysInternKodeverkMap);
     }
@@ -48,7 +48,7 @@ public class KodeverkServiceIT extends AssertionValidator {
 
     @Test
     public void kopiStandardJavaFiler_fraResources_kopiererFiler() {
-        kodeverkService.kopiStandardJavaFiler();
+        kodeverkService.opprettStandardFiler();
         assertTrue(new File("melosys-kodeverk/src/main/java/no/nav/melosys/domain/kodeverk/Kodeverk.java").exists());
     }
 }

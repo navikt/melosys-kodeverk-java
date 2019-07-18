@@ -1,21 +1,21 @@
 <#ftl output_format="undefined" encoding="utf-8" auto_esc=false>
-package no.nav.melosys.domain.kodeverk;
+package ${package};
 
-public enum ${classNavn} implements Kodeverk {
+import no.nav.melosys.domain.kodeverk.${parent};
+
+public enum ${classNavn} implements ${parent} {
 
     ${enumVerdi}
 
-    private String kode;
     private String beskrivelse;
 
-    ${classNavn}(String kode, String beskrivelse) {
-        this.kode = kode;
+    private ${classNavn}(String beskrivelse) {
         this.beskrivelse = beskrivelse;
     }
 
     @Override
     public String getKode() {
-        return kode;
+        return name();
     }
 
     @Override
