@@ -299,6 +299,7 @@ oppgavetyper:
   BEH_SAK_MK: Behandle sak (Manuell)
   JFR: Journalføring
   VUR: Vurder dokument
+  BEH_SED: Behandle SED
 representerer:
   BRUKER: Representerer bruker
   ARBEIDSGIVER: Representerer arbeidsgiver
