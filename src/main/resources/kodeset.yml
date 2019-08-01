@@ -183,9 +183,10 @@ brev:
     MELDING_HENLAGT_SAK: Melding om henlagt sak
     ATTEST_A1: Attest A1
     INNVILGELSE_YRKESAKTIV: Innvilgelse yrkesaktiv
+    INNVILGELSE_YRKESAKTIV_FLERE_LAND: Innvilgelse yrkesaktiv i flere land
+    INNVILGELSE_ARBEIDSGIVER: Innvilgelse Arbeidsgiver
     ORIENTERING_ANMODNING_UNNTAK: Orienteringsbrev om anmodning unntak
     ANMODNING_UNNTAK: Anmodning om unntak
-    INNVILGELSE_ARBEIDSGIVER: Innvilgelse Arbeidsgiver
 dokumenttitler:
   ARBF: Arbeidsforhold
   BKR_MEDL: Bekreftelse på medlemskap i folketrygden
