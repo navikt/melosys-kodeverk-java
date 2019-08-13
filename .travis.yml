@@ -3,19 +3,11 @@ jdk:
   - openjdk8
 script:
   - |
-    if [ ! -d "melosys-kodeverk" ]; then
-        mkdir melosys-kodeverk
-        mkdir melosys-kodeverk/src
-        mkdir melosys-kodeverk/target
-    fi
-
-  - mvn install -B -V
-  - java -jar /home/travis/build/navikt/melosys-kodeverk-java/target/melosys-kodeverk-generator-1.0-SNAPSHOT.jar
-  - cd melosys-kodeverk
   - mvn clean install -B -V
   - |
     set -e
     if [ "$TRAVIS_BRANCH" = 'master' ] && [ "$TRAVIS_PULL_REQUEST" == 'false' ]; then
+        cd melosys-internt-kodeverk
         gpg --fast-import ../travis/codesigning.asc
         mvn -B --settings ../travis/settings.xml deploy -Prelease -DskipTests=true
     fi

@@ -12,4 +12,6 @@ es.properties
 *.zip
 *.versionsBackup
 *.log
-melosys-kodeverk
+melosys-internt-kodeverk
+melosys-kodeverk-generator/node_modules
+melosys-kodeverk-generator/package-lock.json
