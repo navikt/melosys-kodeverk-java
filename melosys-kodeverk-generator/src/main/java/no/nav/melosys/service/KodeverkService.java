@@ -1,18 +1,15 @@
 package no.nav.melosys.service;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import no.nav.melosys.KodeverkException;
 import no.nav.melosys.KodeverkProperties;
 import no.nav.melosys.Kodeverksdefinisjon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.yaml.snakeyaml.Yaml;
 
 import static java.nio.file.Paths.get;
 
@@ -69,14 +66,11 @@ public class KodeverkService {
         });        
     }
 
-    Map<String, Object> lesKodeverkStrukturFraYaml(String yaml) {
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+    Map<String, Object> lesKodeverkStrukturFraYaml(String yamlString) {
+        Yaml yaml = new Yaml();
+        yaml.load(yamlString);
 
-        try {
-            return mapper.readValue(yaml, HashMap.class);
-        } catch (IOException e) {
-            throw new KodeverkException("Feilet å mappe om fil til Yaml-struktur", e);
-        }
+        return yaml.load(yamlString);
     }
 
     private void sjekkOpprettMappe(Map<String, Boolean> pakkeOpprettet, Kodeverksdefinisjon kodeverksklasse) {

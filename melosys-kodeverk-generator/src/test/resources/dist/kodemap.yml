@@ -7,6 +7,13 @@ aktoersroller:
     term: Fullmektig
   - kode: MYNDIGHET
     term: Trygdemyndighet
+anmodningsperiodesvartyper:
+  - kode: INNVILGELSE
+    term: Innvilgelse
+  - kode: DELVIS_INNVILGELSE
+    term: Delvis innvilgelse
+  - kode: AVSLAG
+    term: Avslag
 avklartefakta:
   - kode: VIRKSOMHET
     term: null
@@ -38,6 +45,8 @@ behandlinger:
       term: Ikke fastsatt
     - kode: REGISTRERT_UNNTAK
       term: Om unntaksperioden har blitt godkjent for registrering
+    - kode: AVSLAG_MANGLENDE_OPPL
+      term: Avslått pga manglende opplysninger
   status:
     - kode: OPPRETTET
       term: Behandlingen er opprettet
@@ -201,6 +210,19 @@ begrunnelser:
       term: Innenfor territorialfarvann
     - kode: UTENRIKS
       term: Til sjøs
+  folketrygdloven:
+    avslag:
+      - kode: MANGLENDE_OPPLYSNINGER
+        term: Manglende opplysninger
+      - kode: SAERLIG_GRUNN
+        term: Annet
+    endret_unntaksperiode:
+      - kode: PERIODE_FEILREGISTRERT
+        term: Periode er feilregistrert
+      - kode: AAPEN_SLUTTDATO
+        term: Åpen sluttdato
+      - kode: ANNET
+        term: Annet
   forutgaendemedlemskap:
     - kode: IKKE_LOENNET_UTSEND_AG
       term: >-
@@ -308,23 +330,8 @@ brev:
       term: Innvilgelse Arbeidsgiver
     - kode: AVSLAG_ARBEIDSGIVER
       term: Avslag Arbeidsgiver
-dokumenttitler:
-  - kode: ARBF
-    term: Arbeidsforhold
-  - kode: BKR_MEDL
-    term: Bekreftelse på medlemskap i folketrygden
-  - kode: INNT_SKAT
-    term: Inntektsopplysninger
-  - kode: MERK
-    term: Merknad til sak
-  - kode: STUDIE_DOKUMENTASJON
-    term: Studiedokumentasjon
-  - kode: SOK_MED
-    term: Søknad om medlemskap
-  - kode: BEKR_UNNT_FRA_MEDL
-    term: Unntak
-  - kode: ANNET
-    term: Annet (=fritekst)
+    - kode: AVSLAG_MANGLENDE_OPPLYSNINGER
+      term: Avslag manglende opplysninger
 dokumenttyper:
   - kode: SOEKNAD_AVKL_LOV
     term: null
@@ -353,15 +360,6 @@ finansiering:
     term: Utenlandsk institusjon
   - kode: EGNE_MIDLER
     term: Egne midler / arv / etc
-folketrygdloven:
-  begrunnelser:
-    endret_unntaksperiode:
-      - kode: PERIODE_FEILREGISTRERT
-        term: Periode er feilregistrert
-      - kode: AAPEN_SLUTTDATO
-        term: Åpen sluttdato
-      - kode: ANNET
-        term: Annet
 forespoerseltyper:
   - kode: PURRING
     term: null
@@ -379,69 +377,101 @@ kontantytelser_eu_fo:
   - kode: DP
     term: Dagpenger
 landkoder:
-  - kode: CH
+  - &ref_0
+    kode: CH
     term: Sveits
-  - kode: BE
+  - &ref_1
+    kode: BE
     term: Belgia
-  - kode: BG
+  - &ref_2
+    kode: BG
     term: Bulgaria
-  - kode: DK
+  - &ref_3
+    kode: DK
     term: Danmark
-  - kode: EE
+  - &ref_4
+    kode: EE
     term: Estland
-  - kode: FI
+  - &ref_5
+    kode: FI
     term: Finland
-  - kode: FR
+  - &ref_6
+    kode: FR
     term: Frankrike
-  - kode: GR
+  - &ref_7
+    kode: GR
     term: Hellas
-  - kode: IE
+  - &ref_8
+    kode: IE
     term: Irland
-  - kode: IS
+  - &ref_9
+    kode: IS
     term: Island
-  - kode: IT
+  - &ref_10
+    kode: IT
     term: Italia
-  - kode: HR
+  - &ref_11
+    kode: HR
     term: Kroatia
-  - kode: CY
+  - &ref_12
+    kode: CY
     term: Kypros
-  - kode: LV
+  - &ref_13
+    kode: LV
     term: Latvia
-  - kode: LI
+  - &ref_14
+    kode: LI
     term: Liechtenstein
-  - kode: LT
+  - &ref_15
+    kode: LT
     term: Litauen
-  - kode: LU
+  - &ref_16
+    kode: LU
     term: Luxembourg
-  - kode: MT
+  - &ref_17
+    kode: MT
     term: Malta
-  - kode: NL
+  - &ref_18
+    kode: NL
     term: Nederland
-  - kode: 'NO'
+  - &ref_19
+    kode: 'NO'
     term: Norge
-  - kode: PL
+  - &ref_20
+    kode: PL
     term: Polen
-  - kode: PT
+  - &ref_21
+    kode: PT
     term: Portugal
-  - kode: RO
+  - &ref_22
+    kode: RO
     term: Romania
-  - kode: SK
+  - &ref_23
+    kode: SK
     term: Slovakia
-  - kode: SI
+  - &ref_24
+    kode: SI
     term: Slovenia
-  - kode: ES
+  - &ref_25
+    kode: ES
     term: Spania
-  - kode: GB
+  - &ref_26
+    kode: GB
     term: Storbritannia
-  - kode: SE
+  - &ref_27
+    kode: SE
     term: Sverige
-  - kode: DE
+  - &ref_28
+    kode: DE
     term: Tyskland
-  - kode: HU
+  - &ref_29
+    kode: HU
     term: Ungarn
-  - kode: AT
+  - &ref_30
+    kode: AT
     term: Østerrike
-  - kode: CZ
+  - &ref_31
+    kode: CZ
     term: Tsjekkia
 lovvalgsbestemmelser:
   forordning_883_2004:
@@ -520,6 +550,10 @@ oppgavetyper:
     term: Behandle sak (Manuell)
   - kode: JFR
     term: Journalføring
+  - kode: VUR
+    term: Vurder dokument
+  - kode: BEH_SED
+    term: Behandle SED
 representerer:
   - kode: BRUKER
     term: Representerer bruker
@@ -545,6 +579,56 @@ sakstyper:
     term: Trygdeavtale
   - kode: FTRL
     term: Folketrygdloven
+territorie_og_landkoder:
+  - *ref_0
+  - *ref_1
+  - *ref_2
+  - *ref_3
+  - *ref_4
+  - *ref_5
+  - *ref_6
+  - *ref_7
+  - *ref_8
+  - *ref_9
+  - *ref_10
+  - *ref_11
+  - *ref_12
+  - *ref_13
+  - *ref_14
+  - *ref_15
+  - *ref_16
+  - *ref_17
+  - *ref_18
+  - *ref_19
+  - *ref_20
+  - *ref_21
+  - *ref_22
+  - *ref_23
+  - *ref_24
+  - *ref_25
+  - *ref_26
+  - *ref_27
+  - *ref_28
+  - *ref_29
+  - *ref_30
+  - *ref_31
+  - &ref_32
+    kode: FO
+    term: Færøyene
+  - &ref_33
+    kode: GL
+    term: Grønland
+  - &ref_34
+    kode: SJ
+    term: Svalbard og Jan Mayen
+  - &ref_35
+    kode: AX
+    term: Åland
+territoriekoder:
+  - *ref_32
+  - *ref_33
+  - *ref_34
+  - *ref_35
 trygdedekninger:
   - kode: UTEN_DEKNING
     term: Uten dekning
