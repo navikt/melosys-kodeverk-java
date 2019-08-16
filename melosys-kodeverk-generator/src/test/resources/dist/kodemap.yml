@@ -14,7 +14,7 @@ anmodningsperiodesvartyper:
     term: Delvis innvilgelse
   - kode: AVSLAG
     term: Avslag
-avklartefakta:
+avklartefaktatyper:
   - kode: VIRKSOMHET
     term: null
   - kode: TIDLIGERE_LOVVALGSPERIODE
@@ -25,14 +25,22 @@ avklartefakta:
     term: null
   - kode: YRKESGRUPPE
     term: null
+  - kode: SOKKEL_ELLER_SKIP
+    term: null
   - kode: BOSTEDSLAND
     term: null
   - kode: AARSAK_ENDRING_PERIODE
     term: null
   - kode: VURDERING_UNNTAK_PERIODE
     term: null
+  - kode: MARGINALT_ARBEID
+    term: null
+  - kode: VESENTLIG_AKTIVITET_I_NORGE
+    term: null
+  - kode: ARBEIDSGIVERS_FORRETNINGSSTED
+    term: null
 behandlinger:
-  resultattyper:
+  behandlingsresultattyper:
     - kode: FASTSATT_LOVVALGSLAND
       term: Lovvalgsland er fastsatt
     - kode: FORELOEPIG_FASTSATT_LOVVALGSLAND
@@ -47,7 +55,7 @@ behandlinger:
       term: Om unntaksperioden har blitt godkjent for registrering
     - kode: AVSLAG_MANGLENDE_OPPL
       term: Avslått pga manglende opplysninger
-  status:
+  behandlingsstatus:
     - kode: OPPRETTET
       term: Behandlingen er opprettet
     - kode: UNDER_BEHANDLING
@@ -68,7 +76,7 @@ behandlinger:
       term: Avventer svar på foreløpig lovvalg
     - kode: IVERKSETTER_VEDTAK
       term: Vedtak iverksettes
-  typer:
+  behandlingstyper:
     - kode: SOEKNAD
       term: Søknad
     - kode: KLAGE
@@ -167,6 +175,36 @@ begrunnelser:
       term: 'Kortvarig oppdrag som selvstendig i utlandet, ikke-yrkesaktiv i Norge'
     - kode: KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER
       term: 'Kortvarig oppdrag som selvstendig i utlandet, arbeidstaker i Norge'
+    - kode: SAERLIG_GRUNN
+      term: Fritekstfelt
+  art16_1_anmodning_engelsk:
+    - kode: UTSENDELSE_MELLOM_24_MN_OG_5_AAR
+      term: Ongoing contract for a period longer than 2 and shorter than 5 years.
+    - kode: LOENNET_UTL_ENHET_I_KONSERN
+      term: >-
+        The person has a temporary employment contract within the same
+        concern/conglomerate, and will return to the Norwegian employer.
+    - kode: ERSTATTER_EN_ANNEN_UNDER_5_AAR
+      term: >-
+        The person is being posted to replace another posted worker, and the
+        aggregated posting period is shorter than 5 years.
+    - kode: KORT_OPPDRAG_RETUR_NORSK_AG
+      term: >-
+        The person has not been attached to the Norwegian social insurance
+        system before posting, but will return to the Norwegian employer after a
+        brief posting.
+    - kode: IDEELL_ORGANISASJON_IKKE_VESENTLIG_VIRK
+      term: >-
+        Working for a non-profit organisation, but the Norwegian organisation
+        does not normally carry out its activity in Norway.
+    - kode: KORTVARIG_NAERINGSDRIVENDE_IKKE_YRKESAKTIV
+      term: >-
+        Short-term assignment as self employed in your country. Has not been
+        performing any activity in Norway immediately prior to the assignment.
+    - kode: KORTVARIG_NAERINGSDRIVENDE_ARBEIDSTAKER
+      term: >-
+        Short-term assignment as self employed in your country. Has not been
+        performing self employed activity in Norway prior to the assignment.
     - kode: SAERLIG_GRUNN
       term: Fritekstfelt
   art16_1_avslag:
@@ -332,6 +370,8 @@ brev:
       term: Avslag Arbeidsgiver
     - kode: AVSLAG_MANGLENDE_OPPLYSNINGER
       term: Avslag manglende opplysninger
+    - kode: INNVILGELSE_YRKESAKTIV_FLERE_LAND
+      term: Innvilgelse yrkesaktiv i flere land
 dokumenttyper:
   - kode: SOEKNAD_AVKL_LOV
     term: null
@@ -367,114 +407,81 @@ forespoerseltyper:
     term: null
   - kode: FOERSTEGANG
     term: null
-kontantytelser_eu_fo:
-  - kode: FP
-    term: Foreldrepenger
-  - kode: SP
-    term: Sykepenger
-  - kode: AAP
-    term: Arbeidsavklaringspenger
-  - kode: DP
-    term: Dagpenger
 landkoder:
-  - &ref_0
-    kode: CH
-    term: Sveits
-  - &ref_1
-    kode: BE
+  - kode: BE
     term: Belgia
-  - &ref_2
-    kode: BG
+  - kode: BG
     term: Bulgaria
-  - &ref_3
-    kode: DK
+  - kode: DK
     term: Danmark
-  - &ref_4
-    kode: EE
+  - kode: EE
     term: Estland
-  - &ref_5
-    kode: FI
+  - kode: FI
     term: Finland
-  - &ref_6
-    kode: FR
+  - kode: FR
     term: Frankrike
-  - &ref_7
-    kode: GR
+  - kode: FO
+    term: Færøyene
+  - kode: GL
+    term: Grønland
+  - kode: GR
     term: Hellas
-  - &ref_8
-    kode: IE
+  - kode: IE
     term: Irland
-  - &ref_9
-    kode: IS
+  - kode: IS
     term: Island
-  - &ref_10
-    kode: IT
+  - kode: IT
     term: Italia
-  - &ref_11
-    kode: HR
+  - kode: HR
     term: Kroatia
-  - &ref_12
-    kode: CY
+  - kode: CY
     term: Kypros
-  - &ref_13
-    kode: LV
+  - kode: LV
     term: Latvia
-  - &ref_14
-    kode: LI
+  - kode: LI
     term: Liechtenstein
-  - &ref_15
-    kode: LT
+  - kode: LT
     term: Litauen
-  - &ref_16
-    kode: LU
+  - kode: LU
     term: Luxembourg
-  - &ref_17
-    kode: MT
+  - kode: MT
     term: Malta
-  - &ref_18
-    kode: NL
+  - kode: NL
     term: Nederland
-  - &ref_19
-    kode: 'NO'
+  - kode: 'NO'
     term: Norge
-  - &ref_20
-    kode: PL
+  - kode: PL
     term: Polen
-  - &ref_21
-    kode: PT
+  - kode: PT
     term: Portugal
-  - &ref_22
-    kode: RO
+  - kode: RO
     term: Romania
-  - &ref_23
-    kode: SK
+  - kode: SK
     term: Slovakia
-  - &ref_24
-    kode: SI
+  - kode: SI
     term: Slovenia
-  - &ref_25
-    kode: ES
+  - kode: ES
     term: Spania
-  - &ref_26
-    kode: GB
+  - kode: GB
     term: Storbritannia
-  - &ref_27
-    kode: SE
+  - kode: SJ
+    term: Svalbard og Jan Mayen
+  - kode: CH
+    term: Sveits
+  - kode: SE
     term: Sverige
-  - &ref_28
-    kode: DE
-    term: Tyskland
-  - &ref_29
-    kode: HU
-    term: Ungarn
-  - &ref_30
-    kode: AT
-    term: Østerrike
-  - &ref_31
-    kode: CZ
+  - kode: CZ
     term: Tsjekkia
+  - kode: DE
+    term: Tyskland
+  - kode: HU
+    term: Ungarn
+  - kode: AT
+    term: Østerrike
+  - kode: AX
+    term: Åland
 lovvalgsbestemmelser:
-  forordning_883_2004:
+  lovvalgbestemmelser_883_2004:
     - kode: FO_883_2004_ART11_1
       term: Fo 883/2004 Artikkel 11 nr. 1
     - kode: FO_883_2004_ART11_3A
@@ -515,10 +522,10 @@ lovvalgsbestemmelser:
       term: Fo 883/2004 Artikkel 16 nr. 2
     - kode: FO_883_2004_ANNET
       term: null
-  forordning_987_2009:
+  lovvalgbestemmelser_987_2009:
     - kode: FO_987_2009_ART14_11
       term: Fo 987/2009 Artikkel 14 nr. 11
-  tillegg:
+  tilleggsbestemmelser_883_2004:
     - kode: FO_883_2004_ART11_2
       term: Fo 883/2004 Artikkel 11 nr. 2
     - kode: FO_883_2004_ART11_4_1
@@ -531,6 +538,11 @@ lovvalgsbestemmelser:
       term: Fo 883/2004 Artikkel 87 nr. 7
     - kode: FO_883_2004_ART87A
       term: Fo 883/2004 Artikkel 87a
+maritimtyper:
+  - kode: SOKKEL
+    term: null
+  - kode: SKIP
+    term: null
 medlemskapstyper:
   - kode: PLIKTIG
     term: Pliktig medlemskap
@@ -579,56 +591,15 @@ sakstyper:
     term: Trygdeavtale
   - kode: FTRL
     term: Folketrygdloven
-territorie_og_landkoder:
-  - *ref_0
-  - *ref_1
-  - *ref_2
-  - *ref_3
-  - *ref_4
-  - *ref_5
-  - *ref_6
-  - *ref_7
-  - *ref_8
-  - *ref_9
-  - *ref_10
-  - *ref_11
-  - *ref_12
-  - *ref_13
-  - *ref_14
-  - *ref_15
-  - *ref_16
-  - *ref_17
-  - *ref_18
-  - *ref_19
-  - *ref_20
-  - *ref_21
-  - *ref_22
-  - *ref_23
-  - *ref_24
-  - *ref_25
-  - *ref_26
-  - *ref_27
-  - *ref_28
-  - *ref_29
-  - *ref_30
-  - *ref_31
-  - &ref_32
-    kode: FO
-    term: Færøyene
-  - &ref_33
-    kode: GL
-    term: Grønland
-  - &ref_34
-    kode: SJ
-    term: Svalbard og Jan Mayen
-  - &ref_35
-    kode: AX
-    term: Åland
 territoriekoder:
-  - *ref_32
-  - *ref_33
-  - *ref_34
-  - *ref_35
+  - kode: FO
+    term: Færøyene
+  - kode: GL
+    term: Grønland
+  - kode: SJ
+    term: Svalbard og Jan Mayen
+  - kode: AX
+    term: Åland
 trygdedekninger:
   - kode: UTEN_DEKNING
     term: Uten dekning
