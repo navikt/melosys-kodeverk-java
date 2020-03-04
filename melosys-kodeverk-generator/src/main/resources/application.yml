@@ -18,5 +18,6 @@ generator:
     - Lovvalgbestemmelser_883_2004
     - Lovvalgbestemmelser_987_2009
     - Tilleggsbestemmelser_883_2004
+    - Overgangsregelbestemmelser
   pakke-navn: no.nav.melosys.domain.kodeverk
    
