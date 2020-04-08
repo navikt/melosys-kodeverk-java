@@ -47,7 +47,7 @@ jobs:
           command: |
             mvn install -B -V
       # Ber om at orb-en skal bygge fra ./Dockerfile og deploye til Docker Hub
-      - nais/docker-deploy:
+      - nais/docker:
           image: navikt/melosys-kodeverk-java
 
 workflows:
