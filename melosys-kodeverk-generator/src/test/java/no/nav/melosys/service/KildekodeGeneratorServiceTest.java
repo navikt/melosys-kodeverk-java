@@ -1,10 +1,7 @@
 package no.nav.melosys.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import no.nav.melosys.KodeverkProperties;
 import no.nav.melosys.Kodeverksdefinisjon;
@@ -29,8 +26,9 @@ public class KildekodeGeneratorServiceTest extends AssertionValidator {
     @BeforeEach
     public void setUp() throws IOException {
         kodeverkProperties = new KodeverkProperties();
-        kodeverkProperties.setRessurser(new KodeverkProperties.Ressurser()); 
-        kodeverkProperties.setLovvalgBestemmelseEnumFiler(new ArrayList<>());
+        kodeverkProperties.setRessurser(new KodeverkProperties.Ressurser());
+        kodeverkProperties.setLovvalgBestemmelseEnumFiler(Collections.emptyList());
+        kodeverkProperties.setFolketrygdenBestemmelseEnumFiler(Collections.emptyList());
         kodeverkProperties.getRessurser().setTemplateMappe("templates");
         kodeverkProperties.getRessurser().setKodeverkTemplate("Kodeverk.ftlh");
         freeMarkerTemplateService = new FreeMarkerTemplateService(kodeverkProperties);
@@ -48,13 +46,13 @@ public class KildekodeGeneratorServiceTest extends AssertionValidator {
                 lagMapForKodeTerm("ARBEIDSGIVER", "ARBEIDSGIVER"),
                 lagMapForKodeTerm("REPRESENTANT", "REPRESENTANT"),
                 lagMapForKodeTerm("MYNDIGHET", "MYNDIGHET")
-                
+
         );
 
         String kildeKode = kildekodeGeneratorService.genererEnumKildeKode(new Kodeverksdefinisjon("Aktoerroller", PACKAGE_PATH, kodeTermer));
         validerEnumVerdier(kildeKode);
     }
-    
+
     @Test
     public void genererEnumKildeKode_valueIMapErNull_genererKildeKoden() {
         kildekodeGeneratorService = new KildekodeGeneratorService(
@@ -64,7 +62,7 @@ public class KildekodeGeneratorServiceTest extends AssertionValidator {
         List<Map<String, Object>> kodeTermer = asList(
                 lagMapForKodeTerm("BRUKER", null),
                 lagMapForKodeTerm("ARBEIDSGIVER", null),
-                lagMapForKodeTerm("REPRESENTANT", null),    
+                lagMapForKodeTerm("REPRESENTANT", null),
                 lagMapForKodeTerm("MYNDIGHET", null)
         );
 

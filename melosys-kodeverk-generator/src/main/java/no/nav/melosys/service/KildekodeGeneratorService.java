@@ -20,6 +20,8 @@ public class KildekodeGeneratorService {
 
     private final KodeverkProperties kodeverkProperties;
 
+    private static final String PARENT = "parent";
+
     @Autowired
     public KildekodeGeneratorService(KodeverkProperties kodeverkProperties,
                                      FreeMarkerTemplateService freeMarkerTemplateService) {
@@ -37,7 +39,14 @@ public class KildekodeGeneratorService {
         root.put("enumVerdi", enumList);
         root.put("classNavn", kodeverksdefinisjon.enumNavn);
         root.put("package", kodeverksdefinisjon.javapakke);
-        root.put("parent", kodeverkProperties.getLovvalgBestemmelseEnumFiler().contains(kodeverksdefinisjon.enumNavn) ? "LovvalgBestemmelse" : "Kodeverk");
+
+        if (kodeverkProperties.getLovvalgBestemmelseEnumFiler().contains(kodeverksdefinisjon.enumNavn)) {
+            root.put(PARENT, "LovvalgBestemmelse");
+        } else if (kodeverkProperties.getFolketrygdenBestemmelseEnumFiler().contains(kodeverksdefinisjon.enumNavn)) {
+            root.put(PARENT, "Bestemmelse");
+        } else {
+            root.put(PARENT, "Kodeverk");
+        }
 
         try {
             return freeMarkerTemplateService.generereKildeKodeFraTemplate(root, kodeverkProperties.getRessurser().getKodeverkTemplate());

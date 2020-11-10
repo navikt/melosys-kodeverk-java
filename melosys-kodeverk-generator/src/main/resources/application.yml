@@ -8,16 +8,19 @@ generator:
     kodeverk-mappe: ${generator.generert.kildekode-mappe}/no/nav/melosys/domain/kodeverk
   ressurser:
     template-mappe: /templates
-    standard-enum-filer: 
+    standard-enum-filer:
       - Kodeverk
+      - Bestemmelse
       - LovvalgBestemmelse
     kodeverk-template: Kodeverk.ftlh
 #  versjon-fil: melosys-kodeverk-generator/src/test/resources/dist/semver.txt
 #  kodeverk-Yaml: melosys-kodeverk-generator/src/test/resources/dist/kodemap.yml
-  lovvalgBestemmelse-enum-filer: 
+  folketrygdenBestemmelse-enum-filer:
+    - Folketrygdloven_kap2_bestemmelser
+  lovvalgBestemmelse-enum-filer:
     - Lovvalgbestemmelser_883_2004
     - Lovvalgbestemmelser_987_2009
     - Tilleggsbestemmelser_883_2004
     - Overgangsregelbestemmelser
   pakke-navn: no.nav.melosys.domain.kodeverk
-   
+

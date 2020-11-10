@@ -16,12 +16,15 @@ public class KodeverkProperties {
     @NotNull
     private List<String> lovvalgBestemmelseEnumFiler;
 
+    @NotNull
+    private List<String> folketrygdenBestemmelseEnumFiler;
+
     @NotBlank
     private String pakkeNavn;
 
     @NotNull
     private Generert generert;
-    
+
     @NotNull
     private Ressurser ressurser;
 
@@ -32,7 +35,15 @@ public class KodeverkProperties {
     public void setLovvalgBestemmelseEnumFiler(final List<String> lovvalgBestemmelseEnumFiler) {
         this.lovvalgBestemmelseEnumFiler = lovvalgBestemmelseEnumFiler;
     }
-    
+
+    public List<String> getFolketrygdenBestemmelseEnumFiler() {
+        return folketrygdenBestemmelseEnumFiler;
+    }
+
+    public void setFolketrygdenBestemmelseEnumFiler(List<String> folketrygdenBestemmelseEnumFiler) {
+        this.folketrygdenBestemmelseEnumFiler = folketrygdenBestemmelseEnumFiler;
+    }
+
     public String getPakkeNavn() {
         return pakkeNavn;
     }
@@ -91,7 +102,7 @@ public class KodeverkProperties {
             this.kodeverkMappe = kodeverkMappe;
         }
     }
-    
+
     public static class Ressurser {
 
         @NotNull
