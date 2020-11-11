@@ -1,4 +1,7 @@
+### NB! Flyttet til navikt/melosys-kodeverk
+
 # Melosys-kodeverk-java
+
 This is a standalone application which generates Java enum classes based on the information 
 provided by a yaml file and a version file.
 
